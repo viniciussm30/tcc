@@ -3,4 +3,6 @@ $(document).ready(function() {
     $('#menuMobile1').sidenav();
     // Select
     $('select').formSelect();
+    // Slider
+    $('.slider').slider();
 });

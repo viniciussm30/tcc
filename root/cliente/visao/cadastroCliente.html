@@ -1,4 +1,18 @@
-<div id="conteudo" class="container">
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Inicial</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="..../css/materialize.css">
+</head>
+
+<body>
+
+
+
     <div class="row">
         <form action="" class="col s12 l12">
             <div class="row">
@@ -6,14 +20,18 @@
                     <input type="text" id="nomeCliente" placeholder="Digite seu nome" class="validate">
                     <label for="nomeCliente">Nome completo*</label>
                 </div>
-                <!-- <div class="input-field s12 l3">
-                    <input type="text" class="datepicker validate" id="nascimentoCliente" placeholder="dd/mm/aaaa">
-                    <label for="nascimentoCliente">Data de nasciemento*</label>
-                </div> -->
-                <!-- <div class="input-field s12 l4">
-                    <input type="text" class="validate" id="enderecoCLiente" placeholder="Rua, Av...">
-                    <label for="enderecoCLiente">Endereço*</label>
-                </div> -->
+                <div class="row">
+                    <div class="input-field s12 l3">
+                        <input type="text" class="datepicker validate" id="nascimentoCliente" placeholder="dd/mm/aaaa">
+                        <label for="nascimentoCliente">Data de nasciemento*</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field s12 l4">
+                        <input type="text" class="validate" id="enderecoCLiente" placeholder="Rua, Av...">
+                        <label for="enderecoCLiente">Endereço*</label>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <div class="input-field col s12 l2">
@@ -74,12 +92,8 @@
             </div>
         </form>
     </div>
-</div>
 
 
-<script>
-    $(document).ready(function() {
-        // Select
-        $('select').formSelect();
-    });
-</script>
+</body>
+
+</html>

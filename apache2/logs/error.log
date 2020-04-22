@@ -1,6 +1,0 @@
-[Mon Apr 20 23:07:06.864690 2020] [mpm_winnt:notice] [pid 19840:tid 784] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
-[Mon Apr 20 23:07:06.865690 2020] [mpm_winnt:notice] [pid 19840:tid 784] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
-[Mon Apr 20 23:07:06.865690 2020] [core:notice] [pid 19840:tid 784] AH00094: Command line: 'C:\\Users\\vinic\\Desktop\\tcc/apache2/bin/httpd_usbwv8.exe -d C:/Users/vinic/Desktop/tcc/apache2'
-[Mon Apr 20 23:07:06.876683 2020] [mpm_winnt:notice] [pid 19840:tid 784] AH00418: Parent: Created child process 3776
-[Mon Apr 20 23:07:09.048439 2020] [mpm_winnt:notice] [pid 3776:tid 1104] AH00354: Child: Starting 64 worker threads.
-[Tue Apr 21 00:01:40.956072 2020] [core:error] [pid 3776:tid 1532] (20024)The given path is misformatted or contained invalid characters: [client ::1:56870] AH00127: Cannot map GET /.../root/js/inicializacoes.js HTTP/1.1 to file, referer: http://localhost:8080/index.html
