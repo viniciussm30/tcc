@@ -18,6 +18,8 @@ $(document).ready(function() {
         scrollOffset: 0
     });
 
+    $('.collapsible').collapsible();
+
 
 
 });
