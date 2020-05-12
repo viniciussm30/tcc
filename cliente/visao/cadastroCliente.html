@@ -1,0 +1,113 @@
+<div class="row">
+    <h2 class="center-align">Cadastro como cliente</h2>
+</div>
+<div class="row">
+    <form action="" class="col s12 l12">
+        <div class="row">
+            <div class="input-field col s12 l4">
+                <input type="text" id="nomeCliente" placeholder="Digite seu nome">
+                <label for="nomeCliente">Nome completo</label>
+            </div>
+            <div class="input-field col s12 l3">
+                <input type="date" id="nascimentoCliente">
+                <label for="nascimentoCliente">Data de nascimento</label>
+            </div>
+            <div class="input-field col s12 l5">
+                <input type="text" id="enderecoCliente" placeholder="Ex: Rua, Av...">
+                <label for="enderecoCliente">Endereço</label>
+            </div>
+
+
+            <div class="input-field col s12 l2">
+                <input type="text" id="numeroCliente" placeholder="Nº 00">
+                <label for="numeroCliente">Número</label>
+            </div>
+            <div class="input-field col s12 l3">
+                <input type="text" id="complementoCliente">
+                <label for="complementoCliente">Complemento</label>
+            </div>
+            <div class="input-field col s12 l4">
+                <input type="text" id="bairroCliente">
+                <label for="bairroCliente">Bairro</label>
+            </div>
+            <div class="input-field col s12 l3">
+                <input type="text" id="cepCliente" placeholder="Ex: 00000-000">
+                <label for="cepCliente">CEP</label>
+                <script type="text/javascript">
+                    $("#cepCliente").mask("(00000-009");
+                </script>
+            </div>
+
+
+            <div class="input-field col s12 l5">
+                <input type="text" id="cidadeCliente">
+                <label for="cidadeCliente">Cidade</label>
+            </div>
+            <div class="input-field col s12 l2">
+                <select name="" id="">
+                        <option disabled selected>Selecione seu estado</option>
+                            <option>AC</option>
+                            <option>AL</option>
+                            <option>AP</option>
+                            <option>AM</option>
+                            <option>BA</option>
+                            <option>CE</option>
+                            <option>DF</option>
+                            <option>ES</option>
+                            <option>GO</option>
+                            <option>MA</option>
+                            <option>MT</option>
+                            <option>MS</option>
+                            <option>MG</option>
+                            <option>PA</option>
+                            <option>PB</option>
+                            <option>PR</option>
+                            <option>PE</option>
+                            <option>PI</option>
+                            <option>RJ</option>
+                            <option>RN</option>
+                            <option>RS</option>
+                            <option>RO</option>
+                            <option>RR</option>
+                            <option>SC</option>
+                            <option>SP</option>
+                            <option>SE</option>
+                            <option>TO</option>
+                    </select>
+                <label for="">Estado</label>
+            </div>
+            <div class="input-field col s12 l5">
+                <input type="email" id="emailCliente" placeholder="Ex: seuemail@exemplo.com" class="validate">
+                <label for="emailCliente">Email</label>
+                <span class="helper-text" data-error="Email inválido" data-success="Email válido"></span>
+            </div>
+
+
+            <div class="input-field col s12 l4">
+                <input type="text" id="celularCliente" placeholder="(00) 00000-0000">
+                <label for="celularCliente">WhatsApp</label>
+                <script type="text/javascript">
+                    $("#celularCliente").mask("(00) 00000-0009");
+                </script>
+            </div>
+            <div class="input-field col s12 l4">
+                <input type="password" id="senhaCliente" placeholder="Digite uma senha">
+                <label for="senhaCliente">Senha</label>
+            </div>
+            <div class="input-field col s12 l4">
+                <input type="password" id="confirmacaoSenhaCliente" placeholder="Digite sua senha novamente">
+                <label for="confirmacaoSenhaCliente">Confirme sua senha</label>
+            </div>
+            <div class="input-field col s12 l4">
+                <input type="submit" value="Cadastrar" class="btn btn-large">
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+        $('select').formSelect();
+    })
+</script>

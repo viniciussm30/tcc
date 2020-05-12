@@ -1,0 +1,114 @@
+<div class="row center-align">
+    <h3>Cadastro como trabalhador</h3>
+</div>
+<div class="row">
+    <form action="#">
+        <div class="row">
+            <div class="input-field col s12 l4">
+                <input type="text" id="nomeTrabalhador" placeholder="Digite seu nome">
+                <label for="nomeTrabalhador">Nome completo</label>
+            </div>
+            <div class="input-field col s12 l3">
+                <input type="text" id="apelidoTrabalhador" placeholder="Digite um apelido">
+                <label for="apelidoTrabalhador">Apelido</label>
+            </div>
+            <div class="input-field col s12 l2">
+                <input type="date" id="nascimentoTrabalhador">
+                <label for="nascimentoTrabalhador">Data de nascimento</label>
+            </div>
+            <div class="input-field col s12 l3">
+                <input type="text" id="cpfTrabalhador" placeholder="Ex: 000.000.000-00">
+                <label for="cpfTrabalhador">CPF</label>
+            </div>
+            <div class="input-field col s12 l4">
+                <select name="" id="">
+                        <option disabled selected>Selecione a área em que trabalha</option>
+                        <option value="">Pedreiro</option>
+                        <option value="">Encanador</option>
+                        <option value="">Eletricista</option>
+                        <option value="">Empregada Doméstica</option>
+                        <option value="">Jardineiro</option>
+                        <option value="">Manobrista</option>
+                        <option value="">Lavador de automóveis</option>
+                    </select>
+                <label for="">Área de atuação</label>
+            </div>
+            <div class="input-field col s12 l4">
+                <input type="text" id="cidadeTrabalhador" placeholder="Digite sua cidade">
+                <label for="cidadeTrabalhador">Cidade</label>
+            </div>
+            <div class="input-field col s12 l2">
+                <select name="" id="">
+                        <option disabled selected>Selecione seu estado</option>
+                        <option>AC</option>
+                            <option>AL</option>
+                            <option>AP</option>
+                            <option>AM</option>
+                            <option>BA</option>
+                            <option>CE</option>
+                            <option>DF</option>
+                            <option>ES</option>
+                            <option>GO</option>
+                            <option>MA</option>
+                            <option>MT</option>
+                            <option>MS</option>
+                            <option>MG</option>
+                            <option>PA</option>
+                            <option>PB</option>
+                            <option>PR</option>
+                            <option>PE</option>
+                            <option>PI</option>
+                            <option>RJ</option>
+                            <option>RN</option>
+                            <option>RS</option>
+                            <option>RO</option>
+                            <option>RR</option>
+                            <option>SC</option>
+                            <option>SP</option>
+                            <option>SE</option>
+                            <option>TO</option>
+                    </select>
+                <label for="">Estado</label>
+            </div>
+            <div class="input-field col s12 l2">
+                <input type="text" id="celularTrabalhador" placeholder="(00) 00000-0000">
+                <label for="celularTrabalhador">WhatsApp</label>
+            </div>
+            <div class="input-field col s12 l4">
+                <input type="email" id="emailTrabalhador" placeholder="seuemail@exemplo.com" class="validate">
+                <label for="emailTrabalhador">Email</label>
+                <span class="helper-text" data-error="Email inválido" date-success="Email válido">Escreva um email válido</span>
+            </div>
+            <div class="input-field col s12 l4">
+                <input type="password" id="senhaTrabalhador" placeholder="Digite uma senha">
+                <label for="senhaTrabalhador">Senha</label>
+            </div>
+            <div class="input-field col s12 l4">
+                <input type="password" id="confirmacaoSenhaTrabalhador" placeholder="Digite sua senha novamente">
+                <label for="confirmacaoSenhaTrabalhador">Confirme sua senha</label>
+            </div>
+            <div class="col s12">
+                Disponibilidade para atender em outra cidade
+                <p>
+                    <label for="">
+                            <input type="radio" name="disponibilidade" value="">
+                            <span>Sim</span>
+                        </label>
+                    <label for="">
+                            <input type="radio" name="disponibilidade" value="">
+                            <span>Não</span>
+                        </label>
+                </p>
+            </div>
+            <div class="input-field col s12 l4">
+                <input type="submit" value="Cadastrar" class="btn btn-large">
+            </div>
+
+        </div>
+    </form>
+</div>
+<script>
+    $(document).ready(function() {
+        $('select').formSelect();
+    })
+</script>

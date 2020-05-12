@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Inicial</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="css/customizandoCss.css">
 </head>
@@ -19,53 +20,28 @@
                 <a href="" class="brand-logo">Logo</a>
                 <a href="" data-target="menuMobileUm" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a class="homePage">Home</a></li>
                     <li><a href="">Download</a></li>
-                    <li><a href="perguntasFrequentes.html">Perguntas frequentes</a></li>
-                    <li><a href="">Cadastrar-se</a></li>
-                    <li><a href="login.html"><i class="material-icons">account_circle</i></a></li>
+                    <li>
+                        <a class="cadastrarPage">Cadastrar-se</a>
+                    </li>
+                    <li><a class="contatoPage">Contato</a></li>
+                    <li><a class="loginPage"><i class="material-icons">account_circle</i></a></li>
                 </ul>
             </div>
         </nav>
     </div>
 
     <ul class="sidenav" id="menuMobile1">
-        <li><a href="">Login</a></li>
-        <li><a href="index.html" class="home">Home</a></li>
-        <li><a href="perguntasFrequentes.html">Perguntas Frequentes</a></li>
+        <li><a class="homePage">Home</a></li>
+        <li><a class="cadastarPage">Cadastrar-se</a></li>
+        <li><a class="contatoPage">Contato</a></li>
+        <li><a class="loginPage">Login</a></li>
+
+
     </ul>
 
-    <div class="row center-align">
-        <h3>Login</h3>
-    </div>
-
-    <div class="row">
-        <div class="col s12 l7 offset-l4">
-            <div class="row">
-                <form action="">
-                    <div class="row">
-                        <div class="input-field col s12 l7">
-                            <input type="email" id="emailLogin" placeholder="Digite seu email cadastrado">
-                            <label for="emailLogin">Email</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12 l7">
-                            <input type="password" id="senhaLogin" placeholder="Digite sua senha">
-                            <label for="senhaLogin">Senha</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12 l4">
-                            <input type="submit" value="Entrar" class="btn btn-large">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
+    <div id="conteudo"></div>
 
 
 
@@ -99,6 +75,7 @@
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/inicializacoes.js"></script>
+    <script src="js/menu.js"></script>
 </body>
 
 </html>
