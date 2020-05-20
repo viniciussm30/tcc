@@ -4,21 +4,16 @@ $(document).ready(function() {
         fullWidth: true,
     });
     $('.next').click(function() {
+        // Botão para ir para o próximo
         $('.carousel').carousel('next');
     });
-    // Menu mobile 1
+    // Menu mobile 
     $('.sidenav').sidenav();
     // Select
-
-
-
-
-    $('.scrollspy').scrollSpy({
-        scrollOffset: 0
-    });
-
+    $('select').formSelect();
+    // Parte das perguntas frequentes (index.html)
     $('.collapsible').collapsible();
-
-
+    // Botão flutuante
+    $('.fixed-action-btn').floatingActionButton();
 
 });

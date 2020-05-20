@@ -40,3 +40,23 @@ $('.homePage').click(function() {
     $('#conteudo').empty();
     $('#conteudo').load('home.html')
 });
+
+
+// Logado
+
+
+// Página do perfil
+$('.perfilPage').click(function() {
+    $('#conteudoDois').empty();
+    $('#conteudoDois').load('cliente/visao/perfilCliente.html')
+});
+
+$('.homePageLogin').click(function() {
+    $('#conteudoDois').empty();
+    $('#conteudoDois').load('paginaInicial.html');
+});
+
+$('.criarPublicacaoPage').click(function() {
+    $('#conteudoDois').empty();
+    $('#conteudoDois').load('criandoPublicacao.html')
+})
