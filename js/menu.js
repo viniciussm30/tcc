@@ -1,62 +1,31 @@
 // Carregar a página
 $(document).ready(function() {
     $('#conteudo').empty();
-    $('#conteudo').load('home.html');
+    $('#conteudo').load('paginaInicial.html');
+
+});
+
+// Página de cadastro do cliente
+$('.cadClientePage').click(function() {
+    $('#conteudo').empty();
+    $('#conteudo').load('cliente/visao/cad-cliente.html');
+});
+
+// Página de cadastro do trabalhador
+$('.cadTrabalhadorPage').click(function() {
+    $('#conteudo').empty();
+    $('#conteudo').load('trabalhador/visao/cad-trabalhador.html');
 });
 
 // Página de Login
 $('.loginPage').click(function() {
     $('#conteudo').empty();
-    $('#conteudo').load('login.html');
+    $('#conteudo').load('login/login.html')
+
 });
 
-// Página de Cadastrar-se
-$('.cadastrarPage').click(function() {
-    $('#conteudo').empty();
-    $('#conteudo').load('cadastrar.html')
-});
-
-// Página cadastro cliente
-$('.cadastroClientePage').click(function() {
-    $('#conteudo').empty();
-    $('#conteudo').load('cliente/visao/cadastroCliente.html')
-});
-
-
-// Página cadastro trabalhadors
-$('.cadastroClientePage').click(function() {
-    $('#conteudo').empty();
-    $('#conteudo').load('trabalhador/visao/cadastroTrabalhador.html')
-});
-
-// Página contato
-$('.contatoPage').click(function() {
-    $('#conteudo').empty();
-    $('#conteudo').load('contato.html')
-});
-
-// Voltar para o ínicio
+// Página Inicial
 $('.homePage').click(function() {
     $('#conteudo').empty();
-    $('#conteudo').load('home.html')
+    $('#conteudo').load('paginaInicial.html');
 });
-
-
-// Logado
-
-
-// Página do perfil
-$('.perfilPage').click(function() {
-    $('#conteudoDois').empty();
-    $('#conteudoDois').load('cliente/visao/perfilCliente.html')
-});
-
-$('.homePageLogin').click(function() {
-    $('#conteudoDois').empty();
-    $('#conteudoDois').load('paginaInicial.html');
-});
-
-$('.criarPublicacaoPage').click(function() {
-    $('#conteudoDois').empty();
-    $('#conteudoDois').load('criandoPublicacao.html')
-})
