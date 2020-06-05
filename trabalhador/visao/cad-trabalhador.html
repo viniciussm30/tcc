@@ -6,7 +6,7 @@
         </div>
     </div>
 
-    <form id="addTrabalhador" method="POST">
+    <form id="cadTrabalhador">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="nomeTrabalhador">Nome*</label>
@@ -30,11 +30,11 @@
                 <label for="atuacaoTrabalhador">Atuação*</label>
                 <select name="atuacaoTrabalhador" class="form-control">
                 <option selected disabled>Selecione a área em que trabalha</option>
-                <option>Eletricista</option>
-                <option>Encanador</option>
-                <option>Manicure</option>
-                <option>Babá</option>
-                <option>Diarista</option>
+                <option value="eletricista">Eletricista</option>
+                <option value="encanador">Encanador</option>
+                <option value="manicure">Manicure</option>
+                <option value="baba">Babá</option>
+                <option value="diarista">Diarista</option>
             </select>
             </div>
             <div class="form-group col-md-5">
@@ -45,11 +45,11 @@
                 <label for="estadoTrabalhador">Estado*</label>
                 <select name="estadoTrabalhador" class="form-control">
                 <option selected disabled>Escolha seu estado</option>
-                <option>AM</option>
-                <option>AM</option>
-                <option>AM</option>
-                <option>AM</option>
-                <option>AM</option>
+                <option value="AM">AM</option>
+                <option value="SP">SP</option>
+                <option value="RJ">RJ</option>
+                <option value="ES">ES</option>
+                <option value="MG">MG</option>
             </select>
             </div>
         </div>
@@ -91,6 +91,8 @@
                 Você deve concordar, antes de continuar.
             </div>
         </div>
-        <button type="submit" class="btn btn-primary btnCadTrabalhador">Cadastrar</button>
+        <button class="btn btn-primary btnCadTrabalhador">Cadastrar</button>
     </form>
 </div>
+
+<script src="trabalhador/controle/add-trabalhador.js"></script>

@@ -1,8 +1,8 @@
-$('.btnCadCliente').click(function(e) {
+$('.btnCadTrabalhador').click(function(e) {
     e.preventDefault();
     var dados = $('#cadTrabalhador').serialize();
     console.log(dados);
-    var url = '../modelo/add-trabalhador.php';
+    var url = 'trabalhador/modelo/add-trabalhador.php';
     $.ajax({
         dataType: 'JSON',
         type: 'POST',
@@ -12,9 +12,10 @@ $('.btnCadCliente').click(function(e) {
         success: function(dados) {
             if (dados.return == true) {
                 $('#conteudo').empty();
-                $('#conteudo').load('../../paginaInicial.html');
+                $('#conteudo').load('paginaInicial.html');
+                console.log('Enviado com sucesso');
             } else {
-                console.log('Não foi possível')
+                console.log('Não foi possível');
             }
         }
     })
