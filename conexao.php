@@ -1,6 +1,16 @@
 <?php
+    ini_set('display_errors', true);
+    error_reporting(E_ALL);
 
-date_default_timezone_set('America/Sao_Paulo');
+    //Conexão on-line
+    $hostname = "localhost";
+    $database = "achatrampo";
+    $username = "root";
+    $password = "usbw";
 
-$conexao = @mysqli_connect('localhost', 'root', 'usbw', 'achatrampo') or die('Erro ao conectar o banco de dados...');
-
+    if($conecta = mysqli_connect($hostname, $username, $password, $database)){
+        echo "Conectado...............<br>";
+    }else{
+        echo "Erro: ".mysqli_connect_error();
+    }
+?>

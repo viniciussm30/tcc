@@ -29,3 +29,11 @@ $('.homePage').click(function() {
     $('#conteudo').empty();
     $('#conteudo').load('paginaInicial.html');
 });
+
+// Test
+$('.testePage').click(function() {
+    $('#conteudo').empty();
+    $('#conteudo').load('trabalhos/visao/trabalhos.html')
+})
+
+// Conteudo depois de Login

@@ -11,11 +11,22 @@ $('.btnCadTrabalhador').click(function(e) {
         data: dados,
         success: function(dados) {
             if (dados.return == true) {
+                Swal.fire({
+                    title: 'Cadastro',
+                    text: 'Cadastro efetuado com sucesso!',
+                    type: 'success',
+                    confirmButtonText: 'Feito!'
+                })
                 $('#conteudo').empty();
-                $('#conteudo').load('paginaInicial.html');
-                console.log('Enviado com sucesso');
+                $('#conteudo').load('trabalhos/visao/trabalhos.html')
             } else {
-                console.log('Não foi possível');
+                Swal.fire({
+                    title: 'Cadastro',
+                    text: dados.return,
+                    type: 'error',
+                    confirmButtonText: 'Tentar novamente...'
+                })
+
             }
         }
     })

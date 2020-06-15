@@ -1,3 +1,7 @@
+* {
+    font-family: 'Mukta', sans-serif;
+}
+
 .dropdown-item.active,
 .dropdown-item:active {
     color: #fff;
@@ -8,4 +12,12 @@
 .linksFooter {
     list-style: none;
     text-decoration: white;
+    padding-left: 0;
+}
+
+.linksFooter>li>a:hover {
+    list-style: none;
+    text-decoration: white;
+    background-color: rgb(32, 32, 32);
+    padding-left: 0;
 }
