@@ -9,7 +9,7 @@
     $password = "usbw";
 
     if($conecta = mysqli_connect($hostname, $username, $password, $database)){
-        echo "Conectado...............<br>";
+        // echo "Conectado...............<br>";
     }else{
         echo "Erro: ".mysqli_connect_error();
     }

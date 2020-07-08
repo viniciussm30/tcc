@@ -33,10 +33,12 @@
 
 
 
-    $sql = "INSERT INTO trabalhador (nomeCompleto, apelido, dataNascimento, cpf, atuacao, cidade, estado, whatsapp, email, senha) 
-    VALUES ('".$nome."', '".$apelido."', '".$dataNascimento."', '".$cpf."', '".$atuacao."', '".$cidade."', '".$estado."', '".$telefone."', '".$email."', '".$senha."')";
+    $sql = "INSERT INTO trabalhador (nomeCompleto, apelido, dataNascimento, cpf, atuacao, cidade, estado, whatsapp) 
+    VALUES ('".$nome."', '".$apelido."', '".$dataNascimento."', '".$cpf."', '".$atuacao."', '".$cidade."', '".$estado."', '".$telefone."')";
 
-    if(mysqli_query($conecta, $sql)){
+    $sqlDois = "INSERT INTO usuario (email, senha, idTrabalhador) VALUES ('".$email."', '".$senha."', LAST_INSERT_ID())";
+
+    if(mysqli_query($conecta, $sql) & mysqli_query($conecta, $sqlDois)){
         $data = array("return" => true);
     }else{
         $data = array("return" => mysqli_error($conecta));

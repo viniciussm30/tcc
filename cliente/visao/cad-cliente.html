@@ -5,29 +5,32 @@
 
         </div>
     </div>
-    <form id="cadCliente">
+    <form id="cadCliente" class="needs-validation" novalidate>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Nome*</label>
-                <input type="text" class="form-control" name="nomeCliente" placeholder="Digite seu nome completo">
+                <input type="text" class="form-control" name="nomeCliente" placeholder="Digite seu nome completo" required>
+                <div class="invalid-feedback">
+                    Campo obrigátorio
+                </div>
             </div>
             <div class="form-group col-md-2">
                 <label for="dataNascimentoCliente">Nascimento*</label>
-                <input type="date" class="form-control" name="dataNascimentoCliente">
+                <input type="date" class="form-control" name="dataNascimentoCliente" required>
             </div>
             <div class="form-group col-md-4">
                 <label for="enderecoCliente">Endereço*</label>
-                <input type="text" class="form-control" name="enderecoCliente" placeholder="Rua dos Bobos, nº 0">
+                <input type="text" class="form-control" name="enderecoCliente" placeholder="Rua dos Bobos, nº 0" required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-2">
                 <label for="numeroEnderecoCliente">Número*</label>
-                <input type="text" class="form-control" name="numeroEnderecoCliente" placeholder="Nº 00">
+                <input type="text" class="form-control" name="numeroEnderecoCliente" placeholder="Nº 00" required>
             </div>
             <div class="form-group col-md-4">
                 <label for="bairroCliente">Bairro*</label>
-                <input type="text" class="form-control" name="bairroCliente" placeholder="Digite seu bairro">
+                <input type="text" class="form-control" name="bairroCliente" placeholder="Digite seu bairro" required>
             </div>
             <div class="form-group col-md-3">
                 <label for="complementoCliente">Complemento</label>
@@ -35,44 +38,45 @@
             </div>
             <div class="form-group col-md-3">
                 <label for="cepCliente">CEP*</label>
-                <input type="text" class="form-control" name="cepCliente" placeholder="00000-000">
+                <input type="text" class="form-control" name="cepCliente" placeholder="00000-000" required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="cidadeCliente">Cidade*</label>
-                <input type="text" class="form-control" name="cidadeCliente" placeholder="Digite sua cidade">
+                <input type="text" class="form-control" name="cidadeCliente" placeholder="Digite sua cidade" required>
             </div>
             <div class="form-group col-md-1">
                 <label for="inputEstado">Estado*</label>
-                <select name="estadoCliente" class="form-control">
+                <select name="estadoCliente" class="form-control" required>
                 <option selected disabled>Escolha seu estado</option>
-                <option>AM</option>
-                <option>AM</option>
-                <option>AM</option>
-                <option>AM</option>
-                <option>AM</option>
+                <option value="SP">SP</option>
+                <option value="AM">AM</option>
+                <option value="RJ">RJ</option>
+                <option value="MG">MG</option>
+                <option value="SC">SC</option>
             </select>
             </div>
             <div class="form-group col-md-2">
                 <label for="telefoneCliente">WhatsApp*</label>
-                <input type="tel" class="form-control" name="telefoneCliente" placeholder="(00) 00000-0000">
+                <input type="tel" class="form-control" id="telefoneCliente" name="telefoneCliente" placeholder="(00) 00000-0000" required>
+
             </div>
             <div class="form-group col-md-5">
                 <label for="emailCliente">E-mail*</label>
-                <input type="email" class="form-control" name="emailCliente" placeholder="seuemail@exemplo.com">
+                <input type="email" class="form-control" name="emailCliente" placeholder="seuemail@exemplo.com" required>
                 <small id="avisoEmail" class="form-text text-muted"></small>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="senhaCliente">Senha*</label>
-                <input type="password" class="form-control" name="senhaCliente" placeholder="Digite uma senha">
+                <input type="password" class="form-control" name="senhaCliente" placeholder="Digite uma senha" required>
                 <small id="avisoSenha" class="form-text text-muted">Permitido até 16 caracteres</small>
             </div>
             <div class="form-group col-md-6">
                 <label for="confirmacaoSenhaCliente">Confirme sua senha*</label>
-                <input type="password" class="form-control" name="confirmacaoSenhaCliente" placeholder="Diie sua senha novamente">
+                <input type="password" class="form-control" name="confirmacaoSenhaCliente" placeholder="Diie sua senha novamente" required>
                 <small id="avisoConfirmacaoSenhaClente" class="form-text text-muted"></small>
             </div>
         </div>
@@ -94,4 +98,5 @@
     </form>
 </div>
 
+<script src="js/funcoes.js"></script>
 <script src="cliente/controle/add-cliente.js"></script>

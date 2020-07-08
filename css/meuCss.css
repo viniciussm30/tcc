@@ -21,3 +21,11 @@
     background-color: rgb(32, 32, 32);
     padding-left: 0;
 }
+
+.criarPublicacao {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    margin-bottom: 3rem;
+    margin-right: 1rem;
+}

@@ -1,8 +1,8 @@
-$('.btnCadCliente').click(function(e) {
+$('.btn-publicar').click(function(e) {
     e.preventDefault();
-    var dados = $('#cadCliente').serialize();
+    var dados = $('#addTrabalho').serialize();
     console.log(dados);
-    var url = 'cliente/modelo/add-cliente.php';
+    var url = '../modelo/add-trabalhos.php';
     $.ajax({
         dataType: 'JSON',
         type: 'POST',
@@ -12,19 +12,19 @@ $('.btnCadCliente').click(function(e) {
         success: function(dados) {
             if (dados.return == true) {
                 Swal.fire({
-                    title: 'Cadastro',
-                    text: 'Cadastro efetuado com sucesso!',
+                    title: 'Trabalho',
+                    text: 'Publicação efetuada com sucesso!',
                     type: 'success',
                     confirmButtonText: 'Feito!'
                 })
                 $('#conteudo').empty();
-                $('#conteudo').load('login/visao/login.html')
+                $('#conteudo').load('indexCliente.html')
             } else {
                 Swal.fire({
                     title: 'Cadastro',
                     text: dados.return,
                     type: 'error',
-                    confirmButtonText: 'Tentar novamente...'
+                    confirmButtonText: 'Tentar novamente'
                 })
 
             }

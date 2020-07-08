@@ -14,7 +14,7 @@ $cidade = $_POST['cidadeCliente'];
 $estado = $_POST['estadoCliente'];
 $telefone = $_POST['telefoneCliente'];
 $email = $_POST['emailCliente'];
-$senha = $_POST['$senhaCliente'];
+$senha = $_POST['senhaCliente'];
 
 $nome = utf8_decode($nome);
 $endereco = utf8_decode($endereco);
@@ -22,11 +22,15 @@ $bairro = utf8_decode($bairro);
 $complemento = utf8_decode($complemento);
 $cidade = utf8_decode($cidade);
 $email = utf8_decode($email);
-// $senha = utf8_decode($senha);
+$senha = utf8_decode($senha);
 
-$sql = "INSERT INTO cliente (nome, dataNascimento, endereco, numeroEndereco, bairroEndereco, complementoEndereco, cepEndereco, cidadeEndereco, estadoEndereco, email, whatsapp, senha) VALUES ('".$nome."', '".$dataNascimento."', '".$endereco."', '".$numero."', '".$bairro."', '".$complemento."', '".$cep."', '".$cidade."', '".$estado."', '".$email."', '".$telefone."', '".$senha."')";
+$sql = "INSERT INTO cliente (nome, dataNascimento, endereco, numeroEndereco, bairroEndereco, complementoEndereco, cepEndereco, cidadeEndereco, estadoEndereco, whatsapp) VALUES ('".$nome."', '".$dataNascimento."', '".$endereco."', '".$numero."', '".$bairro."', '".$complemento."', '".$cep."', '".$cidade."', '".$estado."', '".$telefone."')";
 
-if(mysqli_query($conecta, $sql)){
+
+
+$sqlDois = "INSERT INTO usuario(email, senha, idCliente) VALUES ('".$email."', '".$senha."', LAST_INSERT_ID())";
+
+if(mysqli_query($conecta, $sql) & mysqli_query($conecta, $sqlDois)){
     $data = array("return" => true);
 }else{
     $data = array("return" => mysqli_error($conecta));
