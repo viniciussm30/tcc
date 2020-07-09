@@ -1,3 +1,93 @@
+<script type="text/javascript">
+    $('cadTrabalhador').validate({
+        rules: {
+            nomeCliente: {
+                required: true,
+                maxlength: 200,
+                minlength: 10,
+                minwords: 2
+            },
+            dataNascimentoCliente: {
+                required: true
+            },
+            enderecoCliente: {
+                required: true
+            },
+            numeroEnderecoCliente: {
+                required: true
+            },
+            bairroCliente: {
+                required: true
+            },
+            complementoCliente: {
+                required: false
+            },
+            cepCliente: {
+                required: true,
+                maxlength: 8
+            },
+            estadoCliente: {
+                required: true
+            },
+            cidadeCliente: {
+                required: true
+            },
+            telefoneCliente: {
+                required: true,
+                maxlength: 11
+            },
+            emailCliente: {
+                required: true,
+                email: true
+            },
+            senhaCliente: {
+                required: true,
+                maxlength: 16,
+                minlength: 8
+            },
+            termos: {
+                required: true
+            }
+        }
+    })
+    $(document).ready(function() {
+
+        $.getJSON('cidade_estado.json', function(data) {
+
+            var items = [];
+            var options = '<option value="">Escolha seu estado</option>';
+
+            $.each(data, function(key, val) {
+                options += '<option value="' + val.nome + '">' + val.nome + '</option>';
+            });
+            $("#estados").html(options);
+
+            $("#estados").change(function() {
+
+                var options_cidades = '';
+                var str = "";
+
+                $("#estados option:selected").each(function() {
+                    str += $(this).text();
+                });
+
+                $.each(data, function(key, val) {
+                    if (val.nome == str) {
+                        $.each(val.cidades, function(key_city, val_city) {
+                            options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
+                        });
+                    }
+                });
+
+                $("#cidades").html(options_cidades);
+
+            }).change();
+
+        });
+
+    });
+</script>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col col-12">
@@ -42,20 +132,15 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="cidadeCliente">Cidade*</label>
-                <input type="text" class="form-control" name="cidadeCliente" placeholder="Digite sua cidade" required>
-            </div>
-            <div class="form-group col-md-1">
+            <div class="form-group col-md-2">
                 <label for="inputEstado">Estado*</label>
-                <select name="estadoCliente" class="form-control" required>
-                <option selected disabled>Escolha seu estado</option>
-                <option value="SP">SP</option>
-                <option value="AM">AM</option>
-                <option value="RJ">RJ</option>
-                <option value="MG">MG</option>
-                <option value="SC">SC</option>
-            </select>
+                <select name="estadoCliente" id="estados" class="form-control" required>
+                    <option selected disabled></option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="cidadeCliente">Cidade*</label>
+                <select name="cidadeCliente" id="cidades" class="form-control"></select>
             </div>
             <div class="form-group col-md-2">
                 <label for="telefoneCliente">WhatsApp*</label>
@@ -69,24 +154,24 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
                 <label for="senhaCliente">Senha*</label>
                 <input type="password" class="form-control" name="senhaCliente" placeholder="Digite uma senha" required>
                 <small id="avisoSenha" class="form-text text-muted">Permitido até 16 caracteres</small>
             </div>
-            <div class="form-group col-md-6">
+            <!-- <div class="form-group col-md-6">
                 <label for="confirmacaoSenhaCliente">Confirme sua senha*</label>
                 <input type="password" class="form-control" name="confirmacaoSenhaCliente" placeholder="Diie sua senha novamente" required>
                 <small id="avisoConfirmacaoSenhaClente" class="form-text text-muted"></small>
-            </div>
+            </div> -->
         </div>
 
 
 
         <div class="form-group">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
+                <input class="form-check-input" type="checkbox" id="termos">
+                <label class="form-check-label" for="termos">
           Concordo com os termos e condições
         </label>
             </div>

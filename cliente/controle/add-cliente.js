@@ -28,6 +28,14 @@ $('.btnCadCliente').click(function(e) {
                 })
 
             }
+        },
+        error: function(dados) {
+            Swal.fire({
+                title: 'Cadastro',
+                text: 'Não foi foi possível realizar seu cadastro!',
+                type: 'error',
+                confirmButtonText: 'Tentar novamente'
+            })
         }
     })
 })

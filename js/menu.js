@@ -32,35 +32,6 @@ $('.homePage').click(function() {
     $('#conteudo').load('paginaInicial.html');
 });
 
-
-// Conteudo depois de Login (Cliente)
-$(document).ready(function() {
-    $('#conteudoCliente').empty();
-    $('#conteudoCliente').load('trabalhadores.html');
-
-});
-
-// Home cliente
-$('.trabalhadoresPage').click(function() {
-    $('#conteudoCliente').empty();
-    $('#conteudoCliente').load('trabalhadores.html');
-
-});
-
-$('.minhasPublicacoesPage').click(function() {
-    $('#conteudoCliente').empty();
-    $('#conteudoCliente').load('minhasPublicacoes.html');
-
-});
-
 $('.criarPublicacao').click(function() {
     $('#criar').modal('show');
-});
-
-
-// Trabalhador
-$(document).ready(function() {
-    $('#conteudoTrabalhador').empty();
-    $('#conteudoTrabalhador').load('trabalhosPublicados.html');
-
 });

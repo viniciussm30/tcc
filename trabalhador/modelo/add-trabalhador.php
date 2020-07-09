@@ -29,6 +29,7 @@
         $cidade = utf8_decode($cidade);
         $email = utf8_decode($email);
         $senha = utf8_decode($senha);
+        $estado = utf8_decode($estado);
 
 
 

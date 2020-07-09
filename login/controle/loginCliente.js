@@ -25,6 +25,14 @@ $(document).ready(function() {
                     })
                     $('#login input').val("");
                 }
+            },
+            error: function(dados) {
+                Swal.fire({
+                    title: 'Acha Trampo',
+                    text: 'Não foi possível validar seu login',
+                    type: 'error',
+                    confirmButtonText: 'Tentar novamente'
+                })
             }
         })
 

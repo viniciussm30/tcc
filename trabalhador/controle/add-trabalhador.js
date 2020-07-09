@@ -1,5 +1,6 @@
 $('.btnCadTrabalhador').click(function(e) {
     e.preventDefault();
+
     var dados = $('#cadTrabalhador').serialize();
     console.log(dados);
     var url = 'trabalhador/modelo/add-trabalhador.php';
@@ -18,16 +19,24 @@ $('.btnCadTrabalhador').click(function(e) {
                     confirmButtonText: 'Feito!'
                 })
                 $('#conteudo').empty();
-                $('#conteudo').load('trabalhos/visao/trabalhos.html')
+                $('#conteudo').load('login/visao/login.html')
             } else {
                 Swal.fire({
                     title: 'Cadastro',
                     text: dados.return,
                     type: 'error',
-                    confirmButtonText: 'Tentar novamente...'
+                    confirmButtonText: 'Tentar novamente'
                 })
 
             }
+        },
+        error: function(dados) {
+            Swal.fire({
+                title: 'Cadastro',
+                text: 'Não foi possível realizar seu cadastro.',
+                type: 'error',
+                confirmButtonText: 'Tentar novamente'
+            })
         }
     })
 })
