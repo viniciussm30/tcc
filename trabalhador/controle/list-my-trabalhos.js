@@ -1,12 +1,12 @@
-$('.minhasPublicacoesPage').click(function() {
-    var url = '../modelo/list-my-publicacoes.php';
+$('.meusTrabalhosPage').click(function() {
+    var url = '../modelo/list-my-trabalhos.php';
     $.ajax({
         dataType: 'JSON',
         type: 'POST',
         url: url,
         assync: true,
         success: function(dados) {
-            $('#conteudoCliente').empty();
+            $('#conteudoTrabalhador').empty();
             for (var i = 0; i < dados.length; i++) {
                 let meusTrabalhos = `
                 <div class="list-group">
@@ -18,15 +18,14 @@ $('.minhasPublicacoesPage').click(function() {
                                 <button class="btn btn-sm btn-danger"><i class="mdi mdi-24px mdi-pencil-outline"></i></button>
                             </small>
                         </div>
-                        <p class="mb-1">Trabalhador</p>
                         <p class="mb-1">${dados[i].atuacao}</p>
-                        <small class="text-muted">Avaliação</small>
+                        <small class="text-muted">${dados[i].avaliacao}</small>
                     </a>
                 </div>
                 `;
 
 
-                $('#conteudoCliente').append(meusTrabalhos);
+                $('#conteudoTrabalhador').append(meusTrabalhos);
             }
         }
     })

@@ -31,6 +31,7 @@
         $senha = utf8_decode($senha);
         $estado = utf8_decode($estado);
 
+        
 
 
 
@@ -44,6 +45,7 @@
     }else{
         $data = array("return" => mysqli_error($conecta));
     }
+
 
 
     

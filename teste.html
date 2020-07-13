@@ -1,63 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data de Nascimento</title>
+    <script>
+        function validardataDeNascimento(data) {
 
-            $.getJSON('teste.json', function(data) {
+            var dataAtual = new Date();
 
-                var items = [];
-                var options = '<option value="">escolha um estado</option>';
+            var data = new Date(data);
 
-                $.each(data, function(key, val) {
-                    options += '<option value="' + val.nome + '">' + val.nome + '</option>';
-                });
-                $("#estados").html(options);
+            if (data < dataAtual) {
+                console.log("Data Iválida");
+                return true;
+            } else {
+                console.log("Data válida");
+                return false;
+            }
 
-                $("#estados").change(function() {
 
-                    var options_cidades = '';
-                    var str = "";
-
-                    $("#estados option:selected").each(function() {
-                        str += $(this).text();
-                    });
-
-                    $.each(data, function(key, val) {
-                        if (val.nome == str) {
-                            $.each(val.cidades, function(key_city, val_city) {
-                                options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
-                            });
-                        }
-                    });
-
-                    $("#cidades").html(options_cidades);
-
-                }).change();
-
-            });
-
-        });
+        }
     </script>
-
 </head>
 
 <body>
-
-    <form>
-
-        <!-- Estado -->
-        <select id="estados">
-			<option value=""></option>
-		</select>
-        <select id="cidades">
-		</select>
-
-    </form>
-
+    <input onchange="validardataDeNascimento(this.value);" id="dataDeNascimento" type="date">
 </body>
 
 </html>

@@ -15,7 +15,7 @@ $('.minhasPublicacoesPage').click(function() {
                             <h5 class="mb-1">${dados[i].titulo}</h5>
                             <small class="text-muted">
                                 <button class="btn btn-sm btn-danger"><i class="mdi mdi-24px mdi-trash-can"></i></button>
-                                <button class="btn btn-sm btn-danger"><i class="mdi mdi-24px mdi-pencil-outline"></i></button>
+                                <button class="btn btn-sm btn-danger btn-edit"><i class="mdi mdi-24px mdi-pencil-outline"></i></button>
                             </small>
                         </div>
                         <p class="mb-1">Trabalhador</p>
@@ -27,6 +27,7 @@ $('.minhasPublicacoesPage').click(function() {
 
 
                 $('#conteudoCliente').append(minhasPublicacoes);
+
             }
         }
     })

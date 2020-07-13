@@ -13,7 +13,7 @@ $('.cadClientePage').click(function() {
     $('#conteudo').load('cliente/visao/cad-cliente.html');
 });
 
-$('.cadCliencadTrabalhadorPagetePage').click(function() {
+$('.cadTrabalhadorPage').click(function() {
     $('#conteudo').empty();
     $('#conteudo').load('trabalhador/visao/cad-trabalhador.html');
 });

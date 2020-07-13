@@ -1,55 +1,4 @@
 <script type="text/javascript">
-    $('cadTrabalhador').validate({
-        rules: {
-            nomeCliente: {
-                required: true,
-                maxlength: 200,
-                minlength: 10,
-                minwords: 2
-            },
-            dataNascimentoCliente: {
-                required: true
-            },
-            enderecoCliente: {
-                required: true
-            },
-            numeroEnderecoCliente: {
-                required: true
-            },
-            bairroCliente: {
-                required: true
-            },
-            complementoCliente: {
-                required: false
-            },
-            cepCliente: {
-                required: true,
-                maxlength: 8
-            },
-            estadoCliente: {
-                required: true
-            },
-            cidadeCliente: {
-                required: true
-            },
-            telefoneCliente: {
-                required: true,
-                maxlength: 11
-            },
-            emailCliente: {
-                required: true,
-                email: true
-            },
-            senhaCliente: {
-                required: true,
-                maxlength: 16,
-                minlength: 8
-            },
-            termos: {
-                required: true
-            }
-        }
-    })
     $(document).ready(function() {
 
         $.getJSON('cidade_estado.json', function(data) {
@@ -99,28 +48,30 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Nome*</label>
-                <input type="text" class="form-control" name="nomeCliente" placeholder="Digite seu nome completo" required>
-                <div class="invalid-feedback">
-                    Campo obrigátorio
-                </div>
+                <input type="text" class="form-control" name="nomeCliente" id="nome" placeholder="Digite seu nome completo" required>
+                <span class="text-info nome"></span>
             </div>
             <div class="form-group col-md-2">
                 <label for="dataNascimentoCliente">Nascimento*</label>
-                <input type="date" class="form-control" name="dataNascimentoCliente" required>
+                <input type="date" class="form-control" name="dataNascimentoCliente" id="nascimento" required>
+                <span class="text-info nascimento"></span>
             </div>
             <div class="form-group col-md-4">
                 <label for="enderecoCliente">Endereço*</label>
-                <input type="text" class="form-control" name="enderecoCliente" placeholder="Rua dos Bobos, nº 0" required>
+                <input type="text" class="form-control" name="enderecoCliente" id="endereco" placeholder="Rua dos Bobos, nº 0" required>
+                <span class="text-info endereco"></span>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-2">
                 <label for="numeroEnderecoCliente">Número*</label>
-                <input type="text" class="form-control" name="numeroEnderecoCliente" placeholder="Nº 00" required>
+                <input type="text" class="form-control" name="numeroEnderecoCliente" id="numero" placeholder="Nº 00" required>
+                <span class="text-info numero"></span>
             </div>
             <div class="form-group col-md-4">
                 <label for="bairroCliente">Bairro*</label>
-                <input type="text" class="form-control" name="bairroCliente" placeholder="Digite seu bairro" required>
+                <input type="text" class="form-control" name="bairroCliente" id="bairro" placeholder="Digite seu bairro" required>
+                <span class="text-info bairro"></span>
             </div>
             <div class="form-group col-md-3">
                 <label for="complementoCliente">Complemento</label>
@@ -128,7 +79,8 @@
             </div>
             <div class="form-group col-md-3">
                 <label for="cepCliente">CEP*</label>
-                <input type="text" class="form-control" name="cepCliente" placeholder="00000-000" required>
+                <input type="text" class="form-control" name="cepCliente" placeholder="00000-000" required id="cep">
+                <span class="text-info cep"></span>
             </div>
         </div>
         <div class="form-row">
@@ -137,27 +89,31 @@
                 <select name="estadoCliente" id="estados" class="form-control" required>
                     <option selected disabled></option>
                 </select>
+                <span class="text-info estados"></span>
             </div>
             <div class="form-group col-md-3">
                 <label for="cidadeCliente">Cidade*</label>
                 <select name="cidadeCliente" id="cidades" class="form-control"></select>
+                <span class="text-info cidades"></span>
             </div>
             <div class="form-group col-md-2">
                 <label for="telefoneCliente">WhatsApp*</label>
-                <input type="tel" class="form-control" id="telefoneCliente" name="telefoneCliente" placeholder="(00) 00000-0000" required>
+                <input type="tel" class="form-control" id="telefone" name="telefoneCliente" placeholder="(00) 00000-0000" required>
+                <span class="text-info telefone"></span>
 
             </div>
             <div class="form-group col-md-5">
                 <label for="emailCliente">E-mail*</label>
-                <input type="email" class="form-control" name="emailCliente" placeholder="seuemail@exemplo.com" required>
-                <small id="avisoEmail" class="form-text text-muted"></small>
+                <input type="email" class="form-control" name="emailCliente" id="email" placeholder="seuemail@exemplo.com" required>
+                <span class="text-info email"></span>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="senhaCliente">Senha*</label>
-                <input type="password" class="form-control" name="senhaCliente" placeholder="Digite uma senha" required>
+                <input type="password" class="form-control" name="senhaCliente" id="senha" placeholder="Digite uma senha" required>
                 <small id="avisoSenha" class="form-text text-muted">Permitido até 16 caracteres</small>
+                <span class="text-info senha"></span>
             </div>
             <!-- <div class="form-group col-md-6">
                 <label for="confirmacaoSenhaCliente">Confirme sua senha*</label>
@@ -172,16 +128,15 @@
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="termos">
                 <label class="form-check-label" for="termos">
-          Concordo com os termos e condições
-        </label>
-            </div>
-            <div class="invalid-feedback">
-                Você deve concordar, antes de continuar.
+                    Concordo com os termos e condições
+                </label>
+                <span class="text-info termos"></span>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary btnCadCliente">Cadastrar</button>
+        <button class="btn btn-primary btnCadCliente" disabled>Cadastrar</button>
     </form>
 </div>
 
-<script src="js/funcoes.js"></script>
+
 <script src="cliente/controle/add-cliente.js"></script>
+<script src="js/validacao.js"></script>

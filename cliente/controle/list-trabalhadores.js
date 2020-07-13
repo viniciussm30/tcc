@@ -18,6 +18,7 @@ $(document).ready(function() {
                             </small>
                         </div>
                         <p class="mb-1">${dados[i].atuacao}</p>
+                        <p class="mb-1">${dados[i].cidade} / ${dados[i].estado}</p>
                     </a>
                 </div>
                 `;
