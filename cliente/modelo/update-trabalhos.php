@@ -13,9 +13,8 @@ session_start();
     $atuacao = utf8_decode($atuacao);
     $descricao = utf8_decode($descricao);
 
-    $sql = "UPDATE trabalhospublicados SET titulo = '".$titulo."', atuacao = '".$atuacao."', descricao = '".$descricao."', avaliacao = '".$avaliacao."' WHERE id = id";
-    print_r($sql);
-    exit;
+    $sql = "UPDATE trabalhospublicados SET titulo = '".$titulo."', atuacao = '".$atuacao."', descricao = '".$descricao."', avaliacao = '".$avaliacao."'";
+    
 
 
     if(mysqli_query($conecta, $sql)){
