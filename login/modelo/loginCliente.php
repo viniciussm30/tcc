@@ -3,6 +3,8 @@
     
     $loginUsuario = $_POST['emailLogin'];
     $senhaUsuario = $_POST['senhaLogin'];
+
+    if($loginUsuario != "" && $senhaUsuario){
     
     $sql = "SELECT *, count(id) as registro FROM usuario WHERE email = '".$loginUsuario."' AND senha = '".$senhaUsuario."' AND idCliente != 0 ";
     
@@ -18,6 +20,9 @@
                 $data = array("return" => "Usuário e/ou senha não validado!");
             }
         }
+    }
+    }else{
+    $data = array("return" => "Preencha os campos");
     }
     
     echo json_encode($data);

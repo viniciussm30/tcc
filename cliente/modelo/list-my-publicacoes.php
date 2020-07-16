@@ -2,6 +2,11 @@
 
 include ('../../conexao.php');
 session_start();
+if(!isset($_SESSION['id']) || $_SESSION['id'] == ''){
+    $data = ["ruturn" => "Usuário não logado"];
+    echo json_encode($data);
+    exit;
+}
 
 
 $select = "SELECT usuario.email, cliente.id FROM usuario JOIN cliente ON usuario.idCliente = cliente.id WHERE usuario.id = ".$_SESSION['id'];

@@ -1,12 +1,6 @@
 $(document).ready(function() {
 
-    function liberaBtn() {
-        if ($('#nome').val() != "" && $('#nascimento').val() != "" && $('#cpf').val() != "" && $('#atuacao').val() != "" && $('#estados').val() != "" && $('#cidades').val() != "" && $('#telefone').val() != "" && $('#email').val() != "" && $('#senha').val() != "" && $('#termos').val() != "" && $('#endereco').val() != "" && $('#numero').val() != "" && $('#bairro').val() != "" && $('#cep').val() != "") {
-            $('.btnCadTrabalhador').removeAttr('disabled');
-            $('.btnCadCliente').removeAttr('disabled');
-            $('.btn-login').removeAttr('disabled');
-        }
-    }
+
 
     $('.nome').hide();
     $('.nascimento').hide();
@@ -71,6 +65,7 @@ $(document).ready(function() {
 
     // Controlando o lembretes para desaparecerem quando o cursor estiver fora do input
     $('#nome').focusout(function() {
+
         if ($('#nome').val() == "") {
             $('.nome').empty();
             $('.nome').removeClass('text-info').addClass('text-danger');
@@ -81,7 +76,7 @@ $(document).ready(function() {
 
         } else {
             $('.nome').hide('slow');
-            liberaBtn();
+
         }
     })
     $('#nascimento').focusout(function() {
@@ -94,7 +89,7 @@ $(document).ready(function() {
 
         } else {
             $('.nascimento').hide('slow');
-            liberaBtn();
+
         }
     });
     $('#cpf').focusout(function() {
@@ -107,7 +102,7 @@ $(document).ready(function() {
 
         } else {
             $('.cpf').hide('slow');
-            liberaBtn();
+
         }
     });
     $('#atuacao').focusout(function() {
@@ -120,7 +115,7 @@ $(document).ready(function() {
 
         } else {
             $('.atuacao').hide('slow');
-            liberaBtn();
+
         }
     });
     $('#estados').focusout(function() {
@@ -133,7 +128,7 @@ $(document).ready(function() {
 
         } else {
             $('.estados').hide('slow');
-            liberaBtn();
+
         }
     });
     $('#cidades').focusout(function() {
@@ -146,7 +141,7 @@ $(document).ready(function() {
 
         } else {
             $('.cidades').hide('slow');
-            liberaBtn();
+
         }
     });
     $('#telefone').focusout(function() {
@@ -159,7 +154,7 @@ $(document).ready(function() {
 
         } else {
             $('.telefone').hide('slow');
-            liberaBtn();
+
         }
     });
     $('#email').focusout(function() {
@@ -172,7 +167,7 @@ $(document).ready(function() {
 
         } else {
             $('.email').hide('slow');
-            liberaBtn();
+
         }
     });
     $('#senha').focusout(function() {
@@ -185,7 +180,7 @@ $(document).ready(function() {
 
         } else {
             $('.senha').hide('slow');
-            liberaBtn();
+
         }
     });
     $('#termos').focusout(function() {
@@ -198,7 +193,7 @@ $(document).ready(function() {
 
         } else {
             $('.termos').hide('slow');
-            liberaBtn();
+
         }
     });
     $('#endereco').focusout(function() {
@@ -211,7 +206,7 @@ $(document).ready(function() {
 
         } else {
             $('.endereco').hide('slow');
-            liberaBtn();
+
         }
     });
     $('#numero').focusout(function() {
@@ -224,7 +219,7 @@ $(document).ready(function() {
 
         } else {
             $('.numero').hide('slow');
-            liberaBtn();
+
         }
     });
     $('#bairro').focusout(function() {
@@ -237,7 +232,7 @@ $(document).ready(function() {
 
         } else {
             $('.bairro').hide('slow');
-            liberaBtn();
+
         }
     });
     $('#cep').focusout(function() {
@@ -250,7 +245,7 @@ $(document).ready(function() {
 
         } else {
             $('.cep').hide('slow');
-            liberaBtn();
+
         }
     });
 });

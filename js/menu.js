@@ -34,4 +34,5 @@ $('.homePage').click(function() {
 
 $('.criarPublicacao').click(function() {
     $('#criar').modal('show');
+    $('#addTrabalho').trigger('reset');
 });

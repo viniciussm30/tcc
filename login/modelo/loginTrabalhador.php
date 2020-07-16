@@ -5,6 +5,8 @@
     $senhaUsuario = $_POST['senhaLogin'];
     
     $sql = "SELECT *, count(id) as registro FROM usuario WHERE email = '".$loginUsuario."' AND senha = '".$senhaUsuario."' AND idTrabalhador != 0 ";
+
+    if($loginUsuario != "" && $senhaUsuario != ""){
     
     if(mysqli_query($conecta, $sql)){
     
@@ -21,6 +23,8 @@
             }
         }
     }
-    
+}else{
+    $data = array("return" => "Preencha os campos");
+}
     echo json_encode($data);
 ?>

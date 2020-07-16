@@ -1,7 +1,6 @@
 <?php
 
 include('../../conexao.php');
-session_start();
 
 $nome = $_POST['nomeCliente'];
 $dataNascimento = $_POST['dataNascimentoCliente'];
@@ -24,6 +23,8 @@ $cidade = utf8_decode($cidade);
 $email = utf8_decode($email);
 $senha = utf8_decode($senha);
 
+if($nome != "" && $dataNascimento != "" && $endereco != "" && $numero != "" && $bairro != "" && $cep != "" && $cidade != "" && $estado != "" && $telefone != "" && $email != "" && $senha != ""){
+
 $sql = "INSERT INTO cliente (nome, dataNascimento, endereco, numeroEndereco, bairroEndereco, complementoEndereco, cepEndereco, cidadeEndereco, estadoEndereco, whatsapp) VALUES ('".$nome."', '".$dataNascimento."', '".$endereco."', '".$numero."', '".$bairro."', '".$complemento."', '".$cep."', '".$cidade."', '".$estado."', '".$telefone."')";
 
 
@@ -34,6 +35,9 @@ if(mysqli_query($conecta, $sql) & mysqli_query($conecta, $sqlDois)){
     $data = array("return" => true);
 }else{
     $data = array("return" => mysqli_error($conecta));
+}
+}else{
+    $data = array("return" => 'Preencha os campos obrigatórios*');
 }
 
 echo json_encode($data);

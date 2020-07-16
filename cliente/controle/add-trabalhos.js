@@ -1,5 +1,6 @@
 $('.btn-publicar').click(function(e) {
     e.preventDefault();
+
     var dados = $('#addTrabalho').serialize();
     console.log(dados);
     var url = '../modelo/add-trabalhos.php';
@@ -17,6 +18,7 @@ $('.btn-publicar').click(function(e) {
                     type: 'success',
                     confirmButtonText: 'Feito!'
                 })
+                $('#criar').modal('hide');
                 $('#conteudoCliente').empty();
                 $('#conteudoCliente').load('indexCliente.html');
             } else {
@@ -28,6 +30,14 @@ $('.btn-publicar').click(function(e) {
                 })
 
             }
+        },
+        error: function(dados) {
+            Swal.fire({
+                title: 'Trabalho',
+                text: 'Não foi possivel adicionar sua publicação',
+                type: 'error',
+                confirmButtonText: 'Tentar novamente'
+            })
         }
     })
 })

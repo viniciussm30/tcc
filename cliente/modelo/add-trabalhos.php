@@ -7,10 +7,10 @@
         exit;
     }
 
-    $titulo = $_POST['titulo'];
-    $prazo = $_POST['prazo'];
-    $atuacao = $_POST['atuacao'];
-    $descricao = $_POST['descricao'];
+    $titulo = $_POST['tituloAdd'];
+    $prazo = $_POST['prazoAdd'];
+    $atuacao = $_POST['atuacaoAdd'];
+    $descricao = $_POST['descricaoAdd'];
 
     $titulo = utf8_decode($titulo);
     $atuacao = utf8_decode($atuacao);
@@ -21,6 +21,8 @@
     $resultado = mysqli_query($conecta, $select);
     $result = mysqli_fetch_array($resultado);
 
+    if($titulo != "" && $atuacao != "" && $descricao != ""){
+
     $sql = "INSERT INTO trabalhospublicados (titulo, prazo, atuacao, descricao, idCliente) VALUES ('".$titulo."', '".$prazo."', '".$atuacao."', '".$descricao."', '".$result['id']."')";
 
     if(mysqli_query($conecta, $sql)){
@@ -28,5 +30,8 @@
     }else{
         $data = array("return" => mysqli_error($conecta));
     }
+}else{
+    $data = array("return" => 'Preencha os campos obrigatórios*');
+}
 
     echo json_encode($data);
