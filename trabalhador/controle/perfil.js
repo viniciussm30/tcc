@@ -15,9 +15,23 @@ $('.perfilTrabalhadorPage').click(function() {
                         <button type="" class="btn btn-dark justify-content-end"><i class="mdi mdi-18px mdi-content-save"></i></button>
                     </div>
                 </div>
-                <div class="container text-center">
-                    <h3>${dados[i].nomeCompleto}</h3>
-                    <h3>${dados[i].apelido}</h3>
+                <div class="container">
+                    <label for="">Nome completo:</label>
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].nomeCompleto}">
+                    <label for="">Apelido:</label>
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].apelido}">
+                    <label for="">Data de nascimento:</label>
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].dataNascimento}">
+                    <label for="">CPF:</label>
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].cpf}">
+                    <label for="">Atuacao:</label>
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].atuacao}"> 
+                    <label for="">Cidade:</label>
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].cidade}">
+                    <label for="">Estado:</label>
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].estado}"> 
+                    <label for="">WhatsApp:</label>
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].whatsapp}"> 
                 </div>
                 
                 

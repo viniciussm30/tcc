@@ -12,7 +12,7 @@ $select = "SELECT usuario.email, trabalhador.id FROM usuario JOIN trabalhador ON
 $resultadoSelect = mysqli_query($conecta, $select);
 $result = mysqli_fetch_array($resultadoSelect);
 
-$selectPerfil = mysqli_query($conecta, "SELECT * FROM trabalhador WHERE trabalhador.id =". $result['id']);
+$selectPerfil = mysqli_query($conecta, "SELECT *, DATE_FORMAT (dataNascimento, '%d/%m/%Y') AS dataNascimento FROM trabalhador WHERE trabalhador.id =". $result['id']);
 while($resultados = mysqli_fetch_assoc($selectPerfil)){
     $results[] = array_map('utf8_encode', $resultados);
 }
