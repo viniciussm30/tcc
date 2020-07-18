@@ -1,6 +1,11 @@
 * {
-    font-family: 'Mukta', sans-serif;
+    font-family: 'Mulish', sans-serif;
 }
+
+
+/* body {
+    background-color: whitesmoke;
+} */
 
 .dropdown-item.active,
 .dropdown-item:active {
@@ -29,4 +34,12 @@
     margin-bottom: 3rem;
     margin-right: 1rem;
     z-index: 1030;
+}
+
+.bg-my {
+    background-color: rgb(233, 233, 233);
+}
+
+#re {
+    cursor: pointer;
 }

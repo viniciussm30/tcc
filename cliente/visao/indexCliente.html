@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="../../css/meuCss.css">
     <link rel="stylesheet" href="../../libs/MaterialDesign/css/materialdesignicons.css">
@@ -14,8 +15,8 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand homePage" href="#!">Navbar</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-my">
+        <a class="navbar-brand homePage" href="#!"><img src="../../img/1-removebg-preview-removebg-preview.png" class="img-fluid" width="200px" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,6 +30,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link perfilClientePage" href="#">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link sairPeril" href="#">Sair</a>
                 </li>
             </ul>
         </div>
@@ -109,10 +113,16 @@
                             </div>
                             <div class="form-group col-12" id="">
                                 <label for="trabalhador">Trabalhador</label>
-                                <input type="search" id="trabalhador" name="trabalhador" list="trabalhadorr" class="form-control" data-value="1">
-                                <datalist id="trabalhadorr">
-                                    <option value="" id="re"></option>
-                                </datalist>
+                                <input type="search" id="trabalhador" name="trabalhador" class="form-control" autocomplete="off">
+                                <input type="hidden" id="trabalhadoor" name="trabalhadoor" class="form-control">
+                                <div value="" id="re"></div>
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="status">Status do trabalho</label>
+                                <select name="statusTrabalho" id="" class="form-control">
+                                    <option value="Pendente">Pendente</option>
+                                    <option value="Concluido">Concluido</option>
+                                </select>
                             </div>
                             <div class="form-group col-12">
                                 <label for="atuacao">Atuação*</label>
@@ -158,6 +168,8 @@
     <script src="../controle/update-trabalhos.js"></script>
     <script src="../controle/list-trabalhadores.js"></script>
     <script src="../controle/list-my-publicacoes.js"></script>
+    <script src="../../logout.js"></script>
+    <script src="../controle/excluir-publicacao.js"></script>
 
 </body>
 

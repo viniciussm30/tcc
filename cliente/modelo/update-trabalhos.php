@@ -14,14 +14,15 @@ if(!isset($_SESSION['id']) || $_SESSION['id'] == ''){
     $descricao = $_POST['descricao'];
     $avaliacao = $_POST['avaliacao'];
     $id = $_POST['id'];
-    $trabalhador = $_POST['trabalhador'];
+    $trabalhador = $_POST['trabalhadoor'];
+    $status = $_POST['statusTrabalho'];
 
     $titulo = utf8_decode($titulo);
     $atuacao = utf8_decode($atuacao);
     $descricao = utf8_decode($descricao);
 
 
-    $sql = "UPDATE trabalhospublicados SET titulo = '".$titulo."', atuacao = '".$atuacao."', descricao = '".$descricao."', avaliacao = '".$avaliacao."', idTrabalhador = '".$trabalhador."' WHERE id = $id";
+    $sql = "UPDATE trabalhospublicados SET titulo = '".$titulo."', atuacao = '".$atuacao."', descricao = '".$descricao."', avaliacao = '".$avaliacao."', idTrabalhador = '$trabalhador', statusTrabalho = '".$status."' WHERE id = $id";
 
     if($titulo != "" && $atuacao != "" && $descricao != ""){
 

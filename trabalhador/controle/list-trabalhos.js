@@ -6,6 +6,7 @@ $(document).ready(function() {
         url: url,
         assync: true,
         success: function(dados) {
+
             $('#conteudoTrabalhador').empty();
             for (var i = 0; i < dados.length; i++) {
                 let trabalhos = `
@@ -16,6 +17,7 @@ $(document).ready(function() {
                         <small>${dados[i].prazo}</small>
                         </div>
                         <p class="mb-1">${dados[i].descricao}</p>
+                        <p>${dados[i].statusTrabalho}</p>
                         <p>${dados[i].cidadeEndereco} / ${dados[i].estadoEndereco}</p>
                         <small>${dados[i].atuacao}</small>
                 </a>
@@ -23,6 +25,20 @@ $(document).ready(function() {
                 `;
                 $('#conteudoTrabalhador').append(trabalhos);
             }
+
+        },
+        error: function(dados) {
+            $('#conteudoTrabalhador').empty();
+
+            let trabalhos = `
+                
+                <div class="text-center">
+                    Não existe trabalhos pendentes. Aguarde!
+                </div>
+                
+                `;
+            $('#conteudoTrabalhador').append(trabalhos);
+
         }
     });
 });
@@ -52,6 +68,17 @@ $('.trabalhosPage').click(function() {
                 `;
                 $('#conteudoTrabalhador').append(trabalhos);
             }
+        },
+        error: function(dados) {
+            $('#conteudoTrabalhador').empty();
+
+            let trabalhos = `
+                <div class="text-center">
+                    Não existe trabalhos pendentes. Aguarde!
+                </div>
+                `;
+            $('#conteudoTrabalhador').append(trabalhos);
+
         }
     });
 })

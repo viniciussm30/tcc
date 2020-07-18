@@ -5,7 +5,7 @@ session_start();
 if(!isset($_SESSION['id']) || $_SESSION['id'] == ''){
     $data = ["ruturn" => "Usuário não logado"];
     echo json_encode($data);
-    exit;
+    
 }
 
 
@@ -14,7 +14,8 @@ $select = "SELECT usuario.email, cliente.id FROM usuario JOIN cliente ON usuario
 $resultado = mysqli_query($conecta, $select);
 $result = mysqli_fetch_array($resultado);
 
-$querys = mysqli_query($conecta, "SELECT * FROM trabalhospublicados WHERE trabalhospublicados.idCliente =" .$result['id']);
+$querys = mysqli_query($conecta, "SELECT trabalhospublicados.*, trabalhador.nomeCompleto FROM trabalhospublicados LEFT JOIN trabalhador ON trabalhospublicados.idTrabalhador = trabalhador.id WHERE trabalhospublicados.idCliente =" .$result['id']);
+
 while($resultados = mysqli_fetch_assoc($querys)){
     $results[] = array_map('utf8_encode', $resultados);
 }

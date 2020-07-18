@@ -27,6 +27,17 @@ $('.meusTrabalhosPage').click(function() {
 
                 $('#conteudoTrabalhador').append(meusTrabalhos);
             }
+        },
+        error: function(dados) {
+            Swal.fire({
+                // title: 'Atenção',
+                text: 'Você não tem trabalhos para ser vizualizados',
+                imageUrl: '../../img/1-removebg-preview-removebg-preview.png',
+                imageWidth: 400,
+                imageHeight: 150,
+                imageAlt: 'Custom image',
+                confirmButtonText: 'OK'
+            })
         }
     })
 })

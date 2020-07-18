@@ -3,10 +3,12 @@ $(document).on('click', '.btn-editar-publicacao', function(e) {
     $('#editTrabalho input[name="titulo"]').val(dados.titulo);
     $('#editTrabalho input[name="prazo"]').val(dados.prazo);
     $('#editTrabalho input[name="avaliacao"]').val(dados.avaliacao);
-    $('#editTrabalho input[name="trabalhador"]').val(dados.idTrabalhador);
+    $('#editTrabalho input[name="trabalhador"]').val(dados.nomeCompleto);
+    $('#editTrabalho input[name="trabalhadoor"]').val(dados.idTrabalhador);
     $('#editTrabalho select[name="atuacao"]').val(dados.atuacao);
     $('#editTrabalho textarea[name="descricao"]').val(dados.descricao);
     $('#editTrabalho input[name="id"]').val(dados.id);
+    $('#editTrabalho select[name="statusTrabalho"]').val(dados.statusTrabalho);
     $('#editar').modal('show');
 
 
@@ -35,8 +37,8 @@ $('.btn-editar').click(function(e) {
                     confirmButtonText: 'Feito!'
                 })
                 $('#editar').modal('hide');
-                $('#conteudoCliente').empty();
-                $('#conteudoCliente').load('indexCliente.html');
+                location.reload();
+
             } else {
                 Swal.fire({
                     title: 'Edição',

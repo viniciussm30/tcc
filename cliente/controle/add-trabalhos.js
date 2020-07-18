@@ -19,8 +19,7 @@ $('.btn-publicar').click(function(e) {
                     confirmButtonText: 'Feito!'
                 })
                 $('#criar').modal('hide');
-                $('#conteudoCliente').empty();
-                $('#conteudoCliente').load('indexCliente.html');
+
             } else {
                 Swal.fire({
                     title: 'Cadastro',

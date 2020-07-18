@@ -23,7 +23,7 @@
 
     if($titulo != "" && $atuacao != "" && $descricao != ""){
 
-    $sql = "INSERT INTO trabalhospublicados (titulo, prazo, atuacao, descricao, idCliente) VALUES ('".$titulo."', '".$prazo."', '".$atuacao."', '".$descricao."', '".$result['id']."')";
+    $sql = "INSERT INTO trabalhospublicados (titulo, prazo, atuacao, descricao, idCliente, statusTrabalho) VALUES ('".$titulo."', '".$prazo."', '".$atuacao."', '".$descricao."', '".$result['id']."', 'Pendente')";
 
     if(mysqli_query($conecta, $sql)){
         $data = array("return" => true);
