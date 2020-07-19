@@ -1,4 +1,4 @@
-$('.perfilTrabalhadorPage').click(function() {
+$('.perfilClientePage').click(function() {
     var url = '../modelo/perfil.php'
     $.ajax({
         dataType: 'JSON',
@@ -6,9 +6,9 @@ $('.perfilTrabalhadorPage').click(function() {
         url: url,
         assync: true,
         success: function(dados) {
-            $('#conteudoTrabalhador').empty();
+            $('#conteudoCliente').empty();
             for (var i = 0; i < dados.length; i++) {
-                let cont = `
+                let perfilCliente = `
                 <div class="container-fluid row mt-2 text-right">
                     <div class="col-12">
                         <button type="" class="btn btn-dark justify-content-end btn-edit-perfil"><i class="mdi mdi-18px mdi-pencil"></i></button>
@@ -17,19 +17,23 @@ $('.perfilTrabalhadorPage').click(function() {
                 </div>
                 <div class="container">
                     <label for="">Nome completo:</label>
-                    <input type="text" class="form-control disabled" disabled value="${dados[i].nomeCompleto}">
-                    <label for="">Apelido:</label>
-                    <input type="text" class="form-control disabled" disabled value="${dados[i].apelido}">
-                    <label for="">Data de nascimento:</label>
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].nome}">
+                    <label for="">Data de Nascimento:</label>
                     <input type="text" class="form-control disabled" disabled value="${dados[i].dataNascimentos}">
-                    <label for="">CPF:</label>
-                    <input type="text" class="form-control disabled" disabled value="${dados[i].cpf}">
-                    <label for="">Atuacao:</label>
-                    <input type="text" class="form-control disabled" disabled value="${dados[i].atuacao}"> 
+                    <label for="">Endereço:</label>
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].endereco}">
+                    <label for="">Número:</label>
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].numeroEndereco}">
+                    <label for="">Bairro:</label>
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].bairroEndereco}"> 
+                    <label for="">Complemento:</label>
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].complementoEndereco}"> 
+                    <label for="">CEP:</label>
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].cepEndereco}"> 
                     <label for="">Estado:</label>
-                    <input type="text" class="form-control disabled" disabled value="${dados[i].estado}"> 
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].estadoEndereco}"> 
                     <label for="">Cidade:</label>
-                    <input type="text" class="form-control disabled" disabled value="${dados[i].cidade}">
+                    <input type="text" class="form-control disabled" disabled value="${dados[i].cidadeEndereco}">
                     <label for="">WhatsApp:</label>
                     <input type="text" class="form-control disabled" disabled value="${dados[i].whatsapp}"> 
                     <label for="">Email:</label>
@@ -40,7 +44,7 @@ $('.perfilTrabalhadorPage').click(function() {
                 
                 
             `;
-                $('#conteudoTrabalhador').append(cont);
+                $('#conteudoCliente').append(perfilCliente);
             }
 
         }
@@ -87,7 +91,7 @@ $(document).on('click', '.btn-edit-perfil', function() {
         url: url,
         assync: true,
         success: function(dados) {
-            $('#conteudoTrabalhador').empty();
+            $('#conteudoCliente').empty();
             for (var i = 0; i < dados.length; i++) {
                 let cont = `
                 <div class="container-fluid row mt-2 text-right">
@@ -101,28 +105,25 @@ $(document).on('click', '.btn-edit-perfil', function() {
                     
                 
                     <label for="">Nome completo:</label>
-                    <input type="text" class="form-control" name="nome" value="${dados[i].nomeCompleto}">
-                    <label for="">Apelido:</label>
-                    <input type="text" class="form-control" name="apelido" value="${dados[i].apelido}">
+                    <input type="text" class="form-control" name="nome" value="${dados[i].nome}">
                     <label for="">Data de nascimento:</label>
                     <input type="date" class="form-control" name="dataNascimento" value="${dados[i].dataNascimento}">
-                    <label for="">CPF:</label>
-                    <input type="text" class="form-control" name="cpf" value="${dados[i].cpf}">
-                    <label for="atuacaoTrabalhador">Atuação*</label>
-                    <select name="atuacaoTrabalhador" id="atuacao" class="form-control" required>
-                        <option selected value="${dados[i].atuacao}">${dados[i].atuacao}</option>
-                        <option value="Encanador">Encanador</option>
-                        <option value="Manicure">Manicure</option>
-                        <option value="Babá">Babá</option>
-                        <option value="Diarista">Diarista</option>
-                        <option value="Eletricista">Eletricista</option>
+                    <label for="">Endereço:</label>
+                    <input type="text" class="form-control" name="endereco" value="${dados[i].endereco}">
+                    <label for="">Número:</label>
+                    <input type="text" class="form-control" name="numero" value="${dados[i].numeroEndereco}">
+                    <label for="">Bairro:</label>
+                    <input type="text" class="form-control" name="bairro" value="${dados[i].bairroEndereco}">
+                    <label for="">Complemento:</label>
+                    <input type="text" class="form-control" name="complemento" value="${dados[i].complementoEndereco}">
+                    <label for="">CEP:</label>
+                    <input type="text" class="form-control" name="cep" value="${dados[i].cepEndereco}">
+                    <label for="estados">Estado*</label>
+                    <select name="estado" id="estados" class="form-control" required>
+                        <option value=""></option>
                     </select>
-                    <label for="estadoTrabalhador">Estado*</label>
-                    <select name="estadoTrabalhador" id="estados" class="form-control" required>
-                        
-                    </select>
-                    <label for="cidadeTrabalhador">Cidade*</label>
-                    <select name="cidadeTrabalhador" id="cidades" class="form-control" required>
+                    <label for="cidades">Cidade*</label>
+                    <select name="cidade" id="cidades" class="form-control" required>
                         
                     </select>
                     <label for="">WhatsApp:</label>
@@ -137,7 +138,7 @@ $(document).on('click', '.btn-edit-perfil', function() {
                 
                 
             `;
-                $('#conteudoTrabalhador').append(cont);
+                $('#conteudoCliente').append(cont);
             }
 
         }

@@ -8,7 +8,7 @@ if(!isset($_SESSION['id']) || $_SESSION['id'] == ''){
     exit;
 }
 
-$query = mysqli_query($conecta, "SELECT trabalhospublicados.*, DATE_FORMAT (prazo, '%d/%m/%Y') AS prazo, cliente.whatsapp, cliente.cidadeEndereco, cliente.estadoEndereco FROM trabalhospublicados JOIN cliente ON trabalhospublicados.idCliente = cliente.id WHERE statusTrabalho = 'Pendente'");
+$query = mysqli_query($conecta, "SELECT trabalhospublicados.*, DATE_FORMAT (prazo, '%d/%m/%Y') AS prazo, cliente.whatsapp, cliente.cidadeEndereco, cliente.estadoEndereco FROM trabalhospublicados JOIN cliente ON trabalhospublicados.idCliente = cliente.id WHERE situacao = 'Pendente' AND statu = 'A'");
 // $querys = mysqli_query($conecta, "SELECT whatsapp FROM cliente");
 
 while($resultado = mysqli_fetch_assoc($query)){

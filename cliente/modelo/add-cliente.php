@@ -20,6 +20,7 @@ $endereco = utf8_decode($endereco);
 $bairro = utf8_decode($bairro);
 $complemento = utf8_decode($complemento);
 $cidade = utf8_decode($cidade);
+$estado = utf8_decode($estado);
 $email = utf8_decode($email);
 $senha = utf8_decode($senha);
 

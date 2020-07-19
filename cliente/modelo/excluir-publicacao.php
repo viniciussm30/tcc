@@ -10,7 +10,7 @@ if(!isset($_SESSION['id']) || $_SESSION['id'] == ''){
 $id = $_POST['id'];
 
 
-$query = "DELETE FROM trabalhospublicados WHERE id = '$id'";
+$query = "UPDATE trabalhospublicados SET statu = 'I' WHERE id = '$id'";
 
 
 if(mysqli_query($conecta, $query)){
