@@ -2,7 +2,7 @@ $('.btn-publicar').click(function(e) {
     e.preventDefault();
 
     var dados = $('#addTrabalho').serialize();
-    console.log(dados);
+    // console.log(dados);
     var url = '../modelo/add-trabalhos.php';
     $.ajax({
         dataType: 'JSON',
@@ -14,18 +14,24 @@ $('.btn-publicar').click(function(e) {
             if (dados.return == true) {
                 Swal.fire({
                     title: 'Trabalho',
-                    text: 'Publicação efetuada com sucesso!',
+                    text: 'Publicação adiciona com sucesso!',
                     type: 'success',
-                    confirmButtonText: 'Feito!'
+                    confirmButtonText: 'Feito!',
+                    footer: '<img src="../../img/1-removebg-preview-removebg-preview.png" class="img-fluid" width="100px" alt="">',
+                }).then((result) => {
+                    if (result.value) {
+                        location.reload();
+                    }
                 })
-                $('#criar').modal('hide');
+
 
             } else {
                 Swal.fire({
                     title: 'Cadastro',
-                    text: dados.return,
+                    text: 'Não foi possível adicionar sua publicação devido a um erro interno',
                     type: 'error',
-                    confirmButtonText: 'Tentar novamente'
+                    confirmButtonText: 'Tentar novamente',
+                    footer: '<img src="../../img/1-removebg-preview-removebg-preview.png" class="img-fluid" width="100px" alt="">',
                 })
 
             }
@@ -35,7 +41,8 @@ $('.btn-publicar').click(function(e) {
                 title: 'Trabalho',
                 text: 'Não foi possivel adicionar sua publicação',
                 type: 'error',
-                confirmButtonText: 'Tentar novamente'
+                confirmButtonText: 'Tentar novamente',
+                footer: '<img src="../../img/1-removebg-preview-removebg-preview.png" class="img-fluid" width="100px" alt="">',
             })
         }
     })

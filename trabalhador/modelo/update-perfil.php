@@ -28,8 +28,10 @@ if(!isset($_SESSION['id']) || $_SESSION['id'] == ''){
     $email = utf8_decode($email);
     $senha = utf8_decode($senha);
 
+    $senhaMD5 = md5($senha);
 
-    $sql = "UPDATE trabalhador, usuario SET trabalhador.nomeCompleto = '".$nome."', trabalhador.atuacao = '".$atuacao."', trabalhador.apelido = '".$apelido."', trabalhador.dataNascimento = '".$dataNascimento."', trabalhador.cpf = '".$cpf."', trabalhador.cidade = '".$cidade."', trabalhador.estado = '".$estado."', trabalhador.whatsapp = '".$whatsapp."', usuario.email = '".$email."', usuario.senha = '".$senha."'  WHERE trabalhador.id AND usuario.idTrabalhador = $id";
+
+    $sql = "UPDATE trabalhador, usuario SET trabalhador.nomeCompleto = '".$nome."', trabalhador.atuacao = '".$atuacao."', trabalhador.apelido = '".$apelido."', trabalhador.dataNascimento = '".$dataNascimento."', trabalhador.cpf = '".$cpf."', trabalhador.cidade = '".$cidade."', trabalhador.estado = '".$estado."', trabalhador.whatsapp = '".$whatsapp."', usuario.email = '".$email."', usuario.senha = '".$senhaMD5."'  WHERE trabalhador.id AND usuario.idTrabalhador = $id";
 
     if($nome != "" && $atuacao != "" && $dataNascimento != "" && $cpf != "" && $estado != "" && $cidade != "" && $whatsapp != "" && $email != "" && $senha != ""){
 

@@ -4,9 +4,16 @@
     $loginUsuario = $_POST['emailLogin'];
     $senhaUsuario = $_POST['senhaLogin'];
 
+    $senhaUsuario = utf8_decode($senhaUsuario);
+    $loginUsuario = utf8_decode($loginUsuario);
+
+    $senhaMD5 = md5($senhaUsuario);
+    
+
+
     if($loginUsuario != "" && $senhaUsuario){
     
-    $sql = "SELECT *, count(id) as registro FROM usuario WHERE email = '".$loginUsuario."' AND senha = '".$senhaUsuario."' AND idCliente != 0 ";
+    $sql = "SELECT *, count(id) as registro FROM usuario WHERE email = '".$loginUsuario."' AND senha = '".$senhaMD5."' AND idCliente != 0 ";
     
     if($resultado = mysqli_query($conecta, $sql)){
     

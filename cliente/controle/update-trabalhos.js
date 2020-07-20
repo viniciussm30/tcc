@@ -8,7 +8,7 @@ $(document).on('click', '.btn-editar-publicacao', function(e) {
     $('#editTrabalho select[name="atuacao"]').val(dados.atuacao);
     $('#editTrabalho textarea[name="descricao"]').val(dados.descricao);
     $('#editTrabalho input[name="id"]').val(dados.id);
-    $('#editTrabalho select[name="statusTrabalho"]').val(dados.statusTrabalho);
+    $('#editTrabalho select[name="statusTrabalho"]').val(dados.situacao);
     $('#editar').modal('show');
 
 
@@ -20,7 +20,7 @@ $('.btn-editar').click(function(e) {
     e.preventDefault();
 
     var dados = $('#editTrabalho').serialize();
-    console.log(dados);
+    // console.log(dados);
     var url = '../modelo/update-trabalhos.php';
     $.ajax({
         dataType: 'JSON',
@@ -32,19 +32,23 @@ $('.btn-editar').click(function(e) {
             if (dados.return == true) {
                 Swal.fire({
                     title: 'Trabalho',
-                    text: 'Publicação editada com sucesso!',
+                    text: 'Perfil editado com sucesso!',
                     type: 'success',
-                    confirmButtonText: 'Feito!'
+                    confirmButtonText: 'Feito!',
+                    footer: '<img src="../../img/1-removebg-preview-removebg-preview.png" class="img-fluid" width="100px" alt="">',
+                }).then((result) => {
+                    if (result.value) {
+                        location.reload();
+                    }
                 })
-                $('#editar').modal('hide');
-                location.reload();
 
             } else {
                 Swal.fire({
                     title: 'Edição',
-                    text: dados.return,
+                    text: 'Não foi possível atualizar sua publicação devido a um erro interno',
                     type: 'error',
-                    confirmButtonText: 'Tentar novamente'
+                    confirmButtonText: 'Tentar novamente',
+                    footer: '<img src="../../img/1-removebg-preview-removebg-preview.png" class="img-fluid" width="100px" alt="">',
                 })
 
             }
@@ -52,9 +56,10 @@ $('.btn-editar').click(function(e) {
         error: function(dados) {
             Swal.fire({
                 title: 'Edição',
-                text: dados.return,
+                text: 'Não foi possível atualizar sua publicação',
                 type: 'error',
-                confirmButtonText: 'Tentar novamente'
+                confirmButtonText: 'Tentar novamente',
+                footer: '<img src="../../img/1-removebg-preview-removebg-preview.png" class="img-fluid" width="100px" alt="">',
             })
         }
 

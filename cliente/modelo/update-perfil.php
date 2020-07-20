@@ -31,8 +31,10 @@ if(!isset($_SESSION['id']) || $_SESSION['id'] == ''){
     $email = utf8_decode($email);
     $senha = utf8_decode($senha);
 
+    $senhaMD5 = md5($senha);
 
-    $sql = "UPDATE cliente, usuario SET cliente.nome = '".$nome."', cliente.dataNascimento = '".$dataNascimento."', cliente.endereco = '".$endereco."', cliente.numeroEndereco = '".$numero."', cliente.bairroEndereco = '".$bairro."', cliente.complementoEndereco = '".$complemento."', cliente.cepEndereco = '".$cep."', cliente.cidadeEndereco = '".$cidade."', cliente.estadoEndereco = '".$estado."', cliente.whatsapp = '".$whatsapp."', usuario.email = '".$email."', usuario.senha = '".$senha."' WHERE cliente.id AND usuario.idCliente = $id";
+
+    $sql = "UPDATE cliente, usuario SET cliente.nome = '".$nome."', cliente.dataNascimento = '".$dataNascimento."', cliente.endereco = '".$endereco."', cliente.numeroEndereco = '".$numero."', cliente.bairroEndereco = '".$bairro."', cliente.complementoEndereco = '".$complemento."', cliente.cepEndereco = '".$cep."', cliente.cidadeEndereco = '".$cidade."', cliente.estadoEndereco = '".$estado."', cliente.whatsapp = '".$whatsapp."', usuario.email = '".$email."', usuario.senha = '".$senhaMD5."' WHERE cliente.id AND usuario.idCliente = $id";
 
     if($nome != "" && $dataNascimento != "" && $endereco != "" && $numero != "" && $bairro != "" && $cep != "" && $cidade != "" && $estado != "" && $whatsapp != "" && $email != "" && $senha != ""){
 

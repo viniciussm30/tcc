@@ -3,8 +3,15 @@
     
     $loginUsuario = $_POST['emailLogin'];
     $senhaUsuario = $_POST['senhaLogin'];
+
+    $senhaUsuario = utf8_decode($senhaUsuario);
+    $loginUsuario = utf8_decode($loginUsuario);
+
+    $senhaMD5 = md5($senhaUsuario);
     
-    $sql = "SELECT *, count(id) as registro FROM usuario WHERE email = '".$loginUsuario."' AND senha = '".$senhaUsuario."' AND idTrabalhador != 0 ";
+    
+    
+    $sql = "SELECT *, count(id) as registro FROM usuario WHERE email = '".$loginUsuario."' AND senha = '".$senhaMD5."' AND idTrabalhador != 0 ";
 
     if($loginUsuario != "" && $senhaUsuario != ""){
     

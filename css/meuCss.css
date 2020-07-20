@@ -1,5 +1,5 @@
 * {
-    font-family: 'Mulish', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 
@@ -11,7 +11,7 @@
 .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #2a3036;
+    background-color: #a0a0a0;
 }
 
 .linksFooter {
@@ -44,21 +44,143 @@
     cursor: pointer;
 }
 
-.ac-opacity {
-    opacity: 0.8;
-    filter: blur(2px);
+#myFooter {
+    background-color: rgb(233, 233, 233);
+    color: #3c3d41;
+    padding-top: 30px;
 }
 
-.ac-card {
-    position: relative;
-    display: -ms-flexbox;
+#myFooter .footer-copyright {
+    background-color: rgb(201, 201, 201);
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#myFooter .row {
+    margin-bottom: 60px;
+}
+
+#myFooter .navbar-brand {
+    margin-top: 45px;
+    height: 65px;
+}
+
+#myFooter .footer-copyright p {
+    margin: 10px;
+    color: #3c3d41;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: #3c3d41;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter h2 a {
+    font-size: 50px;
+    text-align: center;
+    color: #3c3d41;
+}
+
+#myFooter a {
+    color: #3c3d41;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: #000000;
+}
+
+#myFooter .social-networks {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 16px;
+}
+
+#myFooter .social-networks a {
+    font-size: 32px;
+    color: #3c3d41;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+#myFooter .social-networks a:hover {
+    text-decoration: none;
+}
+
+#myFooter .facebook:hover {
+    color: #0077e2;
+}
+
+#myFooter .instagram:hover {
+    color: purple;
+}
+
+#myFooter .twitter:hover {
+    color: #00aced;
+}
+
+#myFooter .btn {
+    color: white;
+    background-color: #d84b6b;
+    border-radius: 20px;
+    border: none;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 25px;
+}
+
+@media screen and (max-width: 767px) {
+    #myFooter {
+        text-align: center;
+    }
+}
+
+
+/* CSS utilizado para posicionar o rodapé no final da página. */
+
+
+/* Você pode remover isso. */
+
+html {
+    height: 100%;
+}
+
+body {
     display: flex;
-    -ms-flex-direction: column;
+    display: -webkit-flex;
     flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+.content {
+    flex: 1 0 auto;
+    -webkit-flex: 1 0 auto;
+    min-height: 200px;
+}
+
+#myFooter {
+    flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+}
+
+.ac-mb-6 {
+    margin-bottom: 10rem !important;
+}
+
+.ac-img-cricle {
+    border-radius: 50%;
 }

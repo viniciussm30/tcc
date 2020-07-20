@@ -161,7 +161,8 @@ $(document).on('click', '.btn-save-perfi', function() {
                     title: 'Trabalho',
                     text: 'Perfil editado com sucesso!',
                     type: 'success',
-                    confirmButtonText: 'Feito!'
+                    confirmButtonText: 'Feito!',
+                    footer: '<img src="../../img/1-removebg-preview-removebg-preview.png" class="img-fluid" width="100px" alt="">',
                 }).then((result) => {
                     if (result.value) {
                         location.reload();
@@ -172,9 +173,10 @@ $(document).on('click', '.btn-save-perfi', function() {
             } else {
                 Swal.fire({
                     title: 'Edição',
-                    text: dados.return,
+                    text: 'Não foi possível atualizar seu perfil devido a um erro interno',
                     type: 'error',
-                    confirmButtonText: 'Tentar novamente'
+                    confirmButtonText: 'Tentar novamente',
+                    footer: '<img src="../../img/1-removebg-preview-removebg-preview.png" class="img-fluid" width="100px" alt="">',
                 })
 
             }
@@ -182,9 +184,10 @@ $(document).on('click', '.btn-save-perfi', function() {
         error: function(dados) {
             Swal.fire({
                 title: 'Edição',
-                text: dados.return,
+                text: 'Não foi possível atualizar seu perfil',
                 type: 'error',
-                confirmButtonText: 'Tentar novamente'
+                confirmButtonText: 'Tentar novamente',
+                footer: '<img src="../../img/1-removebg-preview-removebg-preview.png" class="img-fluid" width="100px" alt="">',
             })
         }
 

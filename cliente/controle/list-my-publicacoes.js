@@ -12,16 +12,16 @@ $('.minhasPublicacoesPage').click(function() {
                 <div class="list-group">
                     <div class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1 w-50">${dados[i].titulo}</h5>
+                            <h5 class="mb-1 w-50">Título: ${dados[i].titulo}</h5>
                             <small class="text-muted">
                                 <button class="btn btn-sm btn-danger btn-excluir-publicacao" data-exclui='${JSON.stringify(dados[i])}'><i class="mdi mdi-24px mdi-trash-can"></i></button>
                                 <button class="btn btn-sm btn-danger btn-edit btn-editar-publicacao" data-publicacao='${JSON.stringify(dados[i])}'><i class="mdi mdi-24px mdi-pencil-outline"></i></button>
                             </small>
                         </div>
-                        <p class="mb-1">${dados[i].statusTrabalho}</p>
+                        <p class="mb-1">Situação: ${dados[i].situacao}</p>
                         <p class="mb-1">${dados[i].nomeCompleto}</p>
-                        <p class="mb-1">${dados[i].atuacao}</p>
-                        <small class="text-muted">${dados[i].avaliacao}</small>
+                        <p class="mb-1">Atuação: ${dados[i].atuacao}</p>
+                        <small class="text-muted">Avaliação: ${dados[i].avaliacao}</small>
                     </div>
                 </div>
 

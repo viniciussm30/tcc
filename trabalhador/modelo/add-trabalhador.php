@@ -31,11 +31,14 @@
         $senha = utf8_decode($senha);
         $estado = utf8_decode($estado);
 
+        $senhaMD5 = md5($senha);
+        
+
         if($nome != "" && $dataNascimento != "" && $cpf != "" && $atuacao != "" && $cidade != "" && $estado != "" && $telefone != "" && $email != "" && $senha != ""){
             $sql = "INSERT INTO trabalhador (nomeCompleto, apelido, dataNascimento, cpf, atuacao, cidade, estado, whatsapp) 
             VALUES ('".$nome."', '".$apelido."', '".$dataNascimento."', '".$cpf."', '".$atuacao."', '".$cidade."', '".$estado."', '".$telefone."')";
 
-            $sqlDois = "INSERT INTO usuario (email, senha, idTrabalhador) VALUES ('".$email."', '".$senha."', LAST_INSERT_ID())";
+            $sqlDois = "INSERT INTO usuario (email, senha, idTrabalhador) VALUES ('".$email."', '".$senhaMD5."', LAST_INSERT_ID())";
 
             if(mysqli_query($conecta, $sql) & mysqli_query($conecta, $sqlDois)){
                 $data = array("return" => true);

@@ -22,7 +22,7 @@ if(!isset($_SESSION['id']) || $_SESSION['id'] == ''){
     $descricao = utf8_decode($descricao);
 
 
-    $sql = "UPDATE trabalhospublicados SET titulo = '".$titulo."', atuacao = '".$atuacao."', descricao = '".$descricao."', avaliacao = '".$avaliacao."', idTrabalhador = '$trabalhador', statusTrabalho = '".$status."' WHERE id = $id";
+    $sql = "UPDATE trabalhospublicados SET titulo = '".$titulo."', atuacao = '".$atuacao."', descricao = '".$descricao."', avaliacao = '".$avaliacao."', idTrabalhador = '$trabalhador', situacao = '".$status."' WHERE id = $id";
 
     if($titulo != "" && $atuacao != "" && $descricao != ""){
 

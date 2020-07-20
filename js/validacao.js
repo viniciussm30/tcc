@@ -2,6 +2,7 @@ $(document).ready(function() {
 
 
 
+
     $('.nome').hide();
     $('.nascimento').hide();
     $('.cpf').hide();
@@ -170,6 +171,7 @@ $(document).ready(function() {
 
         }
     });
+
     $('#senha').focusout(function() {
         if ($('#senha').val() == "") {
             $('.senha').empty();

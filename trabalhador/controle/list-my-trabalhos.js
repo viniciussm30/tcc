@@ -12,14 +12,14 @@ $('.meusTrabalhosPage').click(function() {
                 <div class="list-group">
                     <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">${dados[i].titulo}</h5>
-                            <small class="text-muted">
-                                <button class="btn btn-sm btn-danger"><i class="mdi mdi-24px mdi-trash-can"></i></button>
-                                <button class="btn btn-sm btn-danger"><i class="mdi mdi-24px mdi-pencil-outline"></i></button>
-                            </small>
+                            <h5 class="mb-1">Titulo: ${dados[i].titulo}</h5>
+                            
                         </div>
-                        <p class="mb-1">${dados[i].atuacao}</p>
-                        <small class="text-muted">${dados[i].avaliacao}</small>
+                        <p class="mb-1">Atuação: ${dados[i].atuacao}</p>
+                        <p class="mb-1">Cliente: ${dados[i].nome}</p>
+                        <p class="mb-1">Endereço: ${dados[i].endereco}, ${dados[i].numeroEndereco} ${dados[i].complementoEndereco} - ${dados[i].bairroEndereco} - ${dados[i].cepEndereco} - ${dados[i].cidadeEndereco}/${dados[i].estadoEndereco}</p>
+                        <p class="mb-1">Situação: ${dados[i].situacao}</p>
+                        <small class="text-muted">Avaliação: ${dados[i].avaliacao}</small>
                     </a>
                 </div>
                 `;

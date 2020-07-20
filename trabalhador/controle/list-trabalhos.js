@@ -11,16 +11,26 @@ $(document).ready(function() {
             for (var i = 0; i < dados.length; i++) {
                 let trabalhos = `
                 <div class="list-group">
-                <a href="https://wa.me/55${dados[i].whatsapp}?text=Eu%20quero%20mais%20informações%20sobre%20seu%20trabalho%20publicado%20no%20Acha%20Trampo" class="list-group-item list-group-item-action flex-column align-items-start" target="_blank">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">${dados[i].titulo}</h5>
-                        <small>${dados[i].prazo}</small>
+                    <a href="https://wa.me/55${dados[i].whatsapp}?text=Eu%20quero%20mais%20informações%20sobre%20seu%20trabalho%20publicado%20no%20Acha%20Trampo" class="list-group-item list-group-item-action flex-column align-items-start" target="_blank">
+                    <div class="d-flex w-100">
+                        <img class="img-fluid ac-img-cricle d-flex align-self-start" src="../../img/img3.jpg" width="100px"  >
+                        <div class="d-flex flex-column w-100 ml-5">
+                        
+                            <small class="align-self-end">Data ou prazo: ${dados[i].prazo}</small>
+                            <h5 class="mb-1">Título: ${dados[i].titulo}</h5>
+                            <p class="mb-1">Descrição: ${dados[i].descricao}</p>
+                            <div>Situação: ${dados[i].situacao}</div>
+                            <div>Cliente: ${dados[i].nome}</div>
+                    
+                            <p>Cidade: ${dados[i].cidadeEndereco} / ${dados[i].estadoEndereco}</p>
+                            <small>Atuação: ${dados[i].atuacao}</small>
+                            <small class="align-self-end">Publicado em: ${dados[i].dataHoraPublicacao}</small>
                         </div>
-                        <p class="mb-1">${dados[i].descricao}</p>
-                        <p>${dados[i].statusTrabalho}</p>
-                        <p>${dados[i].cidadeEndereco} / ${dados[i].estadoEndereco}</p>
-                        <small>${dados[i].atuacao}</small>
-                </a>
+                    </div>
+                
+                    
+                    
+                    </a>
                 </div>
                 `;
                 $('#conteudoTrabalhador').append(trabalhos);
@@ -55,16 +65,29 @@ $('.trabalhosPage').click(function() {
             for (var i = 0; i < dados.length; i++) {
                 let trabalhos = `
                 <div class="list-group">
-                <a href="https://wa.me/55${dados[i].whatsapp}?text=Eu%20quero%20mais%20informações%20sobre%20seu%20trabalho%20publicado%20no%20Acha%20Trampo" class="list-group-item list-group-item-action flex-column align-items-start" target="_blank">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">${dados[i].titulo}</h5>
-                        <small>${dados[i].prazo}</small>
+                    <a href="https://wa.me/55${dados[i].whatsapp}?text=Eu%20quero%20mais%20informações%20sobre%20seu%20trabalho%20publicado%20no%20Acha%20Trampo" class="list-group-item list-group-item-action flex-column align-items-start" target="_blank">
+                    <div class="d-flex w-100">
+                        <img class="img-fluid ac-img-cricle d-flex align-self-start" src="../../img/img3.jpg" width="100px"  >
+                        <div class="d-flex flex-column w-100 ml-5">
+                        
+                            <small class="align-self-end">Data ou prazo: ${dados[i].prazo}</small>
+                            <h5 class="mb-1">Título: ${dados[i].titulo}</h5>
+                            <p class="mb-1">Descrição: ${dados[i].descricao}</p>
+                            <div>Situação: ${dados[i].situacao}</div>
+                            <div>Nome: ${dados[i].nome}</div>
+                    
+                            <p>Cidade: ${dados[i].cidadeEndereco} / ${dados[i].estadoEndereco}</p>
+                            <small>Atuação: ${dados[i].atuacao}</small>
+                            <small class="align-self-end">Publicado em: ${dados[i].dataHoraPublicacao}</small>
                         </div>
-                        <p class="mb-1">${dados[i].descricao}</p>
-                        <p>${dados[i].cidadeEndereco} / ${dados[i].estadoEndereco}</p>
-                        <small>${dados[i].atuacao}</small>
-                </a>
+                    </div>
+                
+                    
+                    
+                    </a>
                 </div>
+                
+               
                 `;
                 $('#conteudoTrabalhador').append(trabalhos);
             }

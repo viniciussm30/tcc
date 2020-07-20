@@ -6,21 +6,25 @@ $(document).ready(function() {
         url: url,
         assync: true,
         success: function(dados) {
+
             $('#conteudoCliente').empty();
             for (var i = 0; i < dados.length; i++) {
                 let trabalhadores = `
                 <div class="list-group">
-                    <a href="https://wa.me/55${dados[i].whatsapp}?text=Eu%20tenho%20interesse%20no%20seus%20serviços.%20Te%20achei%20no%20Acha%20Trampo" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">${dados[i].nomeCompleto}</h5>
-                            <small class="text-muted">
-                                <button href="https://wa.me/55${dados[i].whatsapp}?text=Eu%20tenho%20interesse%20no%20seus%20serviços.%20Te%20achei%20no%20Acha%20Trampo" target="_blank" class="btn btn-sm btn-success"><i class="mdi mdi-24px mdi-whatsapp"></i></button>
-                            </small>
+                    <a href="https://wa.me/55${dados[i].whatsapp}?text=Eu%20tenho%20interesse%20no%20seus%20serviços.%20Te%20achei%20no%20Acha%20Trampo" class="list-group-item list-group-item-action flex-column align-items-start" target="_blank">
+                    <div class="d-flex w-100">
+                        <img class="img-fluid ac-img-cricle d-flex align-self-start" src="../../img/img3.jpg" width="100px"  >
+                        <small class="align-self-end"><button href="https://wa.me/55${dados[i].whatsapp}?text=Eu%20tenho%20interesse%20no%20seus%20serviços.%20Te%20achei%20no%20Acha%20Trampo" target="_blank" class="btn btn-sm btn-success"><i class="mdi mdi-18px mdi-whatsapp"></i></button></small>
+                        <div class="d-flex flex-column w-100 ml-5">
+                    
+                            <h5 class="mb-1">Nome: ${dados[i].nomeCompleto}</h5>
+                            <p class="mb-1">${dados[i].apelido}</p>
+                            <div>Atuação: ${dados[i].atuacao}</div>
+                            <div>Cidade: ${dados[i].cidade} / ${dados[i].estado}</div>
                         </div>
-                        <p class="mb-1">${dados[i].atuacao}</p>
-                        <p class="mb-1">${dados[i].cidade} / ${dados[i].estado}</p>
+                    </div>
                     </a>
-                </div>
+            </div>
                 `;
 
 
@@ -42,17 +46,20 @@ $('.trabalhadoresPage').click(function() {
             for (var i = 0; i < dados.length; i++) {
                 let trabalhadores = `
                 <div class="list-group">
-                    <a href="https://wa.me/55${dados[i].whatsapp}?text=Eu%20tenho%20interesse%20no%20seus%20serviços.%20Te%20achei%20no%20Acha%20Trampo" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">${dados[i].nomeCompleto}</h5>
-                            <small class="text-muted">
-                                <button href="https://wa.me/55${dados[i].whatsapp}?text=Eu%20tenho%20interesse%20no%20seus%20serviços.%20Te%20achei%20no%20Acha%20Trampo" target="_blank" class="btn btn-sm btn-success"><i class="mdi mdi-24px mdi-whatsapp"></i></button>
-                            </small>
+                    <a href="https://wa.me/55${dados[i].whatsapp}?text=Eu%20tenho%20interesse%20no%20seus%20serviços.%20Te%20achei%20no%20Acha%20Trampo" class="list-group-item list-group-item-action flex-column align-items-start" target="_blank">
+                    <div class="d-flex w-100">
+                        <img class="img-fluid ac-img-cricle d-flex align-self-start" src="../../img/img3.jpg" width="100px"  >
+                        <small class="align-self-end"><button href="https://wa.me/55${dados[i].whatsapp}?text=Eu%20tenho%20interesse%20no%20seus%20serviços.%20Te%20achei%20no%20Acha%20Trampo" target="_blank" class="btn btn-sm btn-success"><i class="mdi mdi-18px mdi-whatsapp"></i></button></small>
+                        <div class="d-flex flex-column w-100 ml-5">
+                    
+                            <h5 class="mb-1">Nome: ${dados[i].nomeCompleto}</h5>
+                            <p class="mb-1">${dados[i].apelido}</p>
+                            <div>Atuação: ${dados[i].atuacao}</div>
+                            <div>Cidade: ${dados[i].cidade} / ${dados[i].estado}</div>
                         </div>
-                        <p class="mb-1">${dados[i].atuacao}</p>
-                        <p class="mb-1">${dados[i].cidade} / ${dados[i].estado}</p>
+                    </div>
                     </a>
-                </div>
+            </div>
                 `;
 
 
