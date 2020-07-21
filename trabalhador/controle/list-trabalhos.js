@@ -13,7 +13,7 @@ $(document).ready(function() {
                 <div class="list-group">
                     <a href="https://wa.me/55${dados[i].whatsapp}?text=Eu%20quero%20mais%20informações%20sobre%20seu%20trabalho%20publicado%20no%20Acha%20Trampo" class="list-group-item list-group-item-action flex-column align-items-start" target="_blank">
                     <div class="d-flex w-100">
-                        <img class="img-fluid ac-img-cricle d-flex align-self-start" src="../../img/img3.jpg" width="100px"  >
+                    <img class="mdi mdi-48px mdi-account-circle ac-img-cricle d-flex align-self-start" src="" width="100px"  >
                         <div class="d-flex flex-column w-100 ml-5">
                         
                             <small class="align-self-end">Data ou prazo: ${dados[i].prazo}</small>
@@ -67,7 +67,7 @@ $('.trabalhosPage').click(function() {
                 <div class="list-group">
                     <a href="https://wa.me/55${dados[i].whatsapp}?text=Eu%20quero%20mais%20informações%20sobre%20seu%20trabalho%20publicado%20no%20Acha%20Trampo" class="list-group-item list-group-item-action flex-column align-items-start" target="_blank">
                     <div class="d-flex w-100">
-                        <img class="img-fluid ac-img-cricle d-flex align-self-start" src="../../img/img3.jpg" width="100px"  >
+                        <img class="mdi mdi-48px mdi-account-circle ac-img-cricle d-flex align-self-start" src="" width="100px"  >
                         <div class="d-flex flex-column w-100 ml-5">
                         
                             <small class="align-self-end">Data ou prazo: ${dados[i].prazo}</small>

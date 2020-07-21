@@ -14,6 +14,43 @@ $(document).on('click', '.btn-editar-publicacao', function(e) {
 
 });
 
+$(document).ready(function() {
+    $('#trabalhador').keyup(function() {
+        let find = 'nome=' + $('#trabalhador').val();
+
+        console.log(find)
+        $('#re').empty();
+        $.ajax({
+            type: 'POST',
+            dataType: 'JSON',
+            data: find,
+            url: '../modelo/find.php',
+            success: function(find) {
+                for (var i = 0; find.length > i; i++) {
+                    let trab = `
+                    
+                    <p id="re">${find[i].nomeCompleto} (${find[i].atuacao}) - ${find[i].cidade}</p>
+                    
+                            
+                    `;
+                    var id = `${find[i].id}`
+                    $('#re').append(trab);
+                    $('#re').click(function() {
+                        var valorDaDiv = $("#re").text();
+                        console.log(valorDaDiv);
+
+                        $("#trabalhador").val(valorDaDiv);
+                        $("#trabalhadoor").val(id);
+
+
+
+                    })
+                }
+            }
+        })
+    });
+});
+
 
 
 $('.btn-editar').click(function(e) {

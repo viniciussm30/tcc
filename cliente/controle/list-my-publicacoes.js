@@ -45,34 +45,3 @@ $('.minhasPublicacoesPage').click(function() {
         }
     })
 })
-
-$(document).ready(function() {
-    $('#trabalhador').keyup(function() {
-        let find = 'nome=' + $('#trabalhador').val();
-        $('#re').empty();
-        $.ajax({
-            type: 'POST',
-            dataType: 'JSON',
-            data: find,
-            url: '../modelo/find.php',
-            success: function(dados) {
-                for (var i = 0; dados.length > i; i++) {
-                    let trab = `
-                    <div id="re">${dados[i].nomeCompleto} / ${dados[i].cidade}</div>
-                    
-                    `;
-                    var id = `${dados[i].id}`
-                    $('#re').append(trab);
-                    $('#re').click(function() {
-                        var valorDaDiv = $("#re").text();
-                        $("#trabalhador").val(valorDaDiv);
-                        $("#trabalhadoor").val(id);
-
-
-
-                    })
-                }
-            }
-        })
-    });
-});

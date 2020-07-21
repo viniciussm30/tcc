@@ -14,7 +14,7 @@ $trab = $_POST['nome'];
 
 
 
-$qryLista = mysqli_query($conecta, "SELECT * FROM trabalhador WHERE nomeCompleto LIKE '%".utf8_decode($trab)."%'");  
+$qryLista = mysqli_query($conecta, "SELECT nomeCompleto, cidade, atuacao FROM trabalhador WHERE nomeCompleto LIKE '%".utf8_decode($trab)."%'");  
 
 
 if($qryLista == false){
