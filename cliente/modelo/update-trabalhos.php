@@ -14,7 +14,8 @@ if(!isset($_SESSION['id']) || $_SESSION['id'] == ''){
     $descricao = $_POST['descricao'];
     $avaliacao = $_POST['avaliacao'];
     $id = $_POST['id'];
-    $trabalhador = $_POST['trabalhadoor'];
+    $trabalhador = $_POST['trablhadorId'];
+    $trabalhadorNome = $_POST['trabalhador'];
     $status = $_POST['statusTrabalho'];
 
     $titulo = utf8_decode($titulo);
@@ -22,10 +23,10 @@ if(!isset($_SESSION['id']) || $_SESSION['id'] == ''){
     $descricao = utf8_decode($descricao);
 
 
-    if($trabalhador != ""){
+    if($trabalhadorNome != ""){
         $sql = "UPDATE trabalhospublicados SET titulo = '".$titulo."', atuacao = '".$atuacao."', descricao = '".$descricao."', avaliacao = '".$avaliacao."', idTrabalhador = '$trabalhador', situacao = '".$status."' WHERE id = $id";
     }else{
-        $sql = "UPDATE trabalhospublicados SET titulo = '".$titulo."', atuacao = '".$atuacao."', descricao = '".$descricao."', avaliacao = '".$avaliacao."', situacao = '".$status."' WHERE id = $id";
+        $sql = "UPDATE trabalhospublicados SET titulo = '".$titulo."', atuacao = '".$atuacao."', descricao = '".$descricao."', avaliacao = '".$avaliacao."', situacao = '".$status."', idTrabalhador = NULL WHERE id = $id";
     }
     
     

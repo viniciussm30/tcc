@@ -7,14 +7,14 @@ if(!isset($_SESSION['id']) || $_SESSION['id'] == ''){
     exit;
 }
 
-$trab = $_POST['nome'];
+$trab = $_POST['name'];
 
 
 
 
 
 
-$qryLista = mysqli_query($conecta, "SELECT nomeCompleto, cidade, atuacao FROM trabalhador WHERE nomeCompleto LIKE '%".utf8_decode($trab)."%'");  
+$qryLista = mysqli_query($conecta, "SELECT nomeCompleto, cidade, atuacao, id FROM trabalhador WHERE nomeCompleto LIKE '%".utf8_decode($trab)."%'");  
 
 
 if($qryLista == false){

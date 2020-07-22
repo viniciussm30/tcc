@@ -14,40 +14,40 @@ $(document).on('click', '.btn-editar-publicacao', function(e) {
 
 });
 
-$(document).ready(function() {
-    $('#trabalhador').keyup(function() {
-        let find = 'nome=' + $('#trabalhador').val();
-
-        console.log(find)
-        $('#re').empty();
-        $.ajax({
-            type: 'POST',
-            dataType: 'JSON',
-            data: find,
-            url: '../modelo/find.php',
-            success: function(find) {
-                for (var i = 0; find.length > i; i++) {
-                    let trab = `
-                    
-                    <p id="re">${find[i].nomeCompleto} (${find[i].atuacao}) - ${find[i].cidade}</p>
-                    
-                            
-                    `;
-                    var id = `${find[i].id}`
-                    $('#re').append(trab);
-                    $('#re').click(function() {
-                        var valorDaDiv = $("#re").text();
-                        console.log(valorDaDiv);
-
-                        $("#trabalhador").val(valorDaDiv);
-                        $("#trabalhadoor").val(id);
-
-
-
-                    })
-                }
+function resultadoPesquisa(key) {
+    $.ajax({
+        type: 'POST',
+        dataType: 'JSON',
+        assync: true,
+        data: key,
+        url: '../modelo/find.php',
+        success: function(dados) {
+            $('#result').empty();
+            for (const result of dados) {
+                $('#result').append(`
+                    <p class="filter" data-id="${result.id}" data-name="${result.nomeCompleto}">${result.nomeCompleto} (${result.atuacao}) - ${result.cidade}</p>
+                `)
+                console.log(result);
             }
-        })
+        }
+    });
+}
+
+$(document).ready(function() {
+    $(document).on('click', '.filter', function(e) {
+        e.preventDefault();
+        $('#trabalhador').empty();
+        $('#trabalhador').val($(this).attr('data-name'));
+        $('#trablhadorId').val($(this).attr('data-id'));
+        $('#result').empty();
+
+        console.log($(this).attr('data-id'));
+
+    });
+
+    $('#trabalhador').keyup(function() {
+        let key = `name=${$(this).val()}`
+        resultadoPesquisa(key);
     });
 });
 

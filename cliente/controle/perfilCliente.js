@@ -38,8 +38,7 @@ $('.perfilClientePage').click(function() {
                     <input type="text" class="form-control disabled" disabled value="${dados[i].whatsapp}"> 
                     <label for="">Email:</label>
                     <input type="email" class="form-control disabled" disabled value="${dados[i].email}"> 
-                    <label for="">Senha:</label>
-                    <input type="password" class="form-control disabled" disabled value="${dados[i].senha}"> 
+                     
                 </div>
                 
                 
@@ -130,8 +129,7 @@ $(document).on('click', '.btn-edit-perfil', function() {
                     <input type="text" name="whatsapp" class="form-control" value="${dados[i].whatsapp}"> 
                     <label for="">Email:</label>
                     <input type="email" name="email" class="form-control" value="${dados[i].email}"> 
-                    <label for="">Senha:</label>
-                    <input type="password" name="senha" class="form-control" value="${dados[i].senha}"> 
+                    
                     <input type="hidden" name="id" class="form-control" value="${dados[i].id}"> 
                     </form>
                 </div>
