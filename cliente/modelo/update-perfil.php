@@ -33,7 +33,7 @@ if(!isset($_SESSION['id']) || $_SESSION['id'] == ''){
     
 
 
-    $sql = "UPDATE cliente, usuario SET cliente.nome = '".$nome."', cliente.dataNascimento = '".$dataNascimento."', cliente.endereco = '".$endereco."', cliente.numeroEndereco = '".$numero."', cliente.bairroEndereco = '".$bairro."', cliente.complementoEndereco = '".$complemento."', cliente.cepEndereco = '".$cep."', cliente.cidadeEndereco = '".$cidade."', cliente.estadoEndereco = '".$estado."', cliente.whatsapp = '".$whatsapp."', usuario.email = '".$email."' WHERE cliente.id AND usuario.idCliente = $id";
+    $sql = "UPDATE cliente, usuario SET cliente.nome = '".$nome."', cliente.dataNascimento = '".$dataNascimento."', cliente.endereco = '".$endereco."', cliente.numeroEndereco = '".$numero."', cliente.bairroEndereco = '".$bairro."', cliente.complementoEndereco = '".$complemento."', cliente.cepEndereco = '".$cep."', cliente.cidadeEndereco = '".$cidade."', cliente.estadoEndereco = '".$estado."', cliente.whatsapp = '".$whatsapp."', usuario.email = '".$email."' WHERE cliente.id = $id AND usuario.idCliente = $id";
 
     if($nome != "" && $dataNascimento != "" && $endereco != "" && $numero != "" && $bairro != "" && $cep != "" && $cidade != "" && $estado != "" && $whatsapp != "" && $email != ""){
 

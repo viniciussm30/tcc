@@ -1,64 +1,51 @@
 <?php
+    // incluindo a conexao
     include('../../conexao.php');
-    session_start();
     
+    // pegando os dados do formulário enviado via ajax
     $nome = $_POST['nomeTrabalhador'];
-        // echo $nome;
-        $apelido = $_POST['apelidoTrabalhador'];
-        // echo $apelido;
-        $dataNascimento = $_POST['dataNasciementoTrabalhador'];
-        // echo $dataNascimento;
-        $cpf = $_POST['cpfTrabalhador'];
-        // echo $cpf;
-        $atuacao = $_POST['atuacaoTrabalhador'];
-        // echo $atuacao;
-        $cidade = $_POST['cidadeTrabalhador'];
-        // echo $cidade;
-        $estado = $_POST['estadoTrabalhador'];
-        // echo $cidade;
-        $telefone = $_POST['telefoneTrabalhador'];
-        // echo $telefone;
-        $email = $_POST['emailTrabalhador'];
-        // echo $email;
-        $senha = $_POST['senhaTrabalhador'];
-        // echo $senha;
+    $apelido = $_POST['apelidoTrabalhador'];
+    $dataNascimento = $_POST['dataNasciementoTrabalhador'];
+    $cpf = $_POST['cpfTrabalhador'];
+    $atuacao = $_POST['atuacaoTrabalhador'];
+    $cidade = $_POST['cidadeTrabalhador'];
+    $estado = $_POST['estadoTrabalhador'];
+    $telefone = $_POST['telefoneTrabalhador'];
+    $email = $_POST['emailTrabalhador'];
+    $senha = $_POST['senhaTrabalhador'];
 
-        $nome = utf8_decode($nome);
-        $apelido = utf8_decode($apelido);
-        $atuacao = utf8_decode($atuacao);
-        $cidade = utf8_decode($cidade);
-        $email = utf8_decode($email);
-        $senha = utf8_decode($senha);
-        $estado = utf8_decode($estado);
+    // defininodo alguns dados como utf8_decode
+    $nome = utf8_decode($nome);
+    $apelido = utf8_decode($apelido);
+    $atuacao = utf8_decode($atuacao);
+    $cidade = utf8_decode($cidade);
+    $email = utf8_decode($email);
+    $senha = utf8_decode($senha);
+    $estado = utf8_decode($estado);
 
-        $senhaMD5 = md5($senha);
+    // colocando criptografia na senha
+    $senhaMD5 = md5($senha);
         
+    // verificando se os campos obrigatórios estão preenchidos
+    if($nome != "" && $dataNascimento != "" && $cpf != "" && $atuacao != "" && $cidade != "" && $estado != "" && $telefone != "" && $email != "" && $senha != ""){
+        // inserindo dados do usário na tabela
+        $sql = "INSERT INTO trabalhador (nomeCompleto, apelido, dataNascimento, cpf, atuacao, cidade, estado, whatsapp) VALUES ('".$nome."', '".$apelido."', '".$dataNascimento."', '".$cpf."', '".$atuacao."', '".$cidade."', '".$estado."', '".$telefone."')";
+        // inserindo dados de login do usuário na tabela
+        $sqlDois = "INSERT INTO usuario (email, senha, idTrabalhador) VALUES ('".$email."', '".$senhaMD5."', LAST_INSERT_ID())";
 
-        if($nome != "" && $dataNascimento != "" && $cpf != "" && $atuacao != "" && $cidade != "" && $estado != "" && $telefone != "" && $email != "" && $senha != ""){
-            $sql = "INSERT INTO trabalhador (nomeCompleto, apelido, dataNascimento, cpf, atuacao, cidade, estado, whatsapp) 
-            VALUES ('".$nome."', '".$apelido."', '".$dataNascimento."', '".$cpf."', '".$atuacao."', '".$cidade."', '".$estado."', '".$telefone."')";
-
-            $sqlDois = "INSERT INTO usuario (email, senha, idTrabalhador) VALUES ('".$email."', '".$senhaMD5."', LAST_INSERT_ID())";
-
-            if(mysqli_query($conecta, $sql) & mysqli_query($conecta, $sqlDois)){
-                $data = array("return" => true);
-            }else{
-                $data = array("return" => mysqli_error($conecta));
-            }
+        // verifica a query e banco para prosseguir com o cadastro
+        if(mysqli_query($conecta, $sql) & mysqli_query($conecta, $sqlDois)){
+            $data = array("return" => true);
         }else{
-            $data = array("return" => "Preencha os campos obrigatórios*");
+            $data = array("return" => mysqli_error($conecta));
         }
-        
-
-
-
-    
-
-
-
-    
+    // se der algum vazio irá retornar uma mensagem
+    }else{
+        $data = array("return" => "Preencha os campos obrigatórios*");
+    }
+    // mostrando
     echo json_encode($data);
     
-?>
+
 
 

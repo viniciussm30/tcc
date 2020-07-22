@@ -1,3 +1,4 @@
+// Ao clicar na classe perfilTrabalhadorPage irá carregar os dados com o perfil do usário
 $('.perfilTrabalhadorPage').click(function() {
     var url = '../modelo/perfil.php'
     $.ajax({
@@ -34,20 +35,19 @@ $('.perfilTrabalhadorPage').click(function() {
                     <input type="text" class="form-control disabled" disabled value="${dados[i].whatsapp}"> 
                     <label for="">Email:</label>
                     <input type="email" class="form-control disabled" disabled value="${dados[i].email}"> 
-                    <label for="">Senha:</label>
-                    <input type="password" class="form-control disabled" disabled value="${dados[i].senha}"> 
                 </div>
                 
                 
             `;
                 $('#conteudoTrabalhador').append(cont);
             }
-
         }
-    })
+    });
+});
 
-})
+// ao clicar no botão com a classe btn-edit-perfil irá carregar essa página
 $(document).on('click', '.btn-edit-perfil', function() {
+    // pegando as cidade e estados do json
     $.getJSON('../../cidade_estado.json ', function dd(data) {
 
         var items = [];
@@ -129,8 +129,6 @@ $(document).on('click', '.btn-edit-perfil', function() {
                     <input type="text" name="whatsapp" class="form-control" value="${dados[i].whatsapp}"> 
                     <label for="">Email:</label>
                     <input type="email" name="email" class="form-control" value="${dados[i].email}"> 
-                    <label for="">Senha:</label>
-                    <input type="password" name="senha" class="form-control" value="${dados[i].senha}"> 
                     <input type="hidden" name="id" class="form-control" value="${dados[i].id}"> 
                     </form>
                 </div>
@@ -139,12 +137,11 @@ $(document).on('click', '.btn-edit-perfil', function() {
             `;
                 $('#conteudoTrabalhador').append(cont);
             }
-
         }
-    })
+    });
+});
 
-})
-
+// qunado clicar no botão com a classe btn-save-perfil ele irá chamar essa função
 $(document).on('click', '.btn-save-perfi', function() {
     var dados = $('#editPerfil').serialize();
     var url = '../modelo/update-perfil.php';
@@ -155,37 +152,40 @@ $(document).on('click', '.btn-save-perfi', function() {
         assync: true,
         data: dados,
         success: function(dados) {
+            // se for TRUE iráa aparecer uma mensagem e depois de clicar em feito irá recarregar a página
             if (dados.return == true) {
                 Swal.fire({
-                    title: 'Trabalho',
+                    title: 'Perfil',
                     text: 'Perfil editado com sucesso!',
                     type: 'success',
-                    confirmButtonText: 'Feito!'
+                    confirmButtonText: 'Feito!',
+                    footer: '<img src="../../img/1-removebg-preview-removebg-preview.png" class="img-fluid" width="100px" alt="">'
                 }).then((result) => {
                     if (result.value) {
                         location.reload();
                     }
-                })
-
-
+                });
+                // FALSE irá aparecer uma mensagem para ele tentar novamente 
             } else {
                 Swal.fire({
-                    title: 'Edição',
-                    text: dados.return,
+                    title: 'Perfil',
+                    text: 'Não foi possível atualizar seu perfil',
                     type: 'error',
-                    confirmButtonText: 'Tentar novamente'
-                })
+                    confirmButtonText: 'Tentar novamente',
+                    footer: '<img src="../../img/1-removebg-preview-removebg-preview.png" class="img-fluid" width="100px" alt="">'
+                });
 
             }
         },
+        // se der algum erro aparecerá outra mensagem
         error: function(dados) {
             Swal.fire({
-                title: 'Edição',
-                text: dados.return,
+                title: 'Perfil',
+                text: 'Não foi possível atualizar seu perfil',
                 type: 'error',
-                confirmButtonText: 'Tentar novamente'
-            })
+                confirmButtonText: 'Tentar novamente',
+                footer: '<img src="../../img/1-removebg-preview-removebg-preview.png" class="img-fluid" width="100px" alt="">'
+            });
         }
-
-    })
-})
+    });
+});

@@ -18,7 +18,7 @@ if(!isset($_SESSION['id']) || $_SESSION['id'] == ''){
     $cidade = $_POST['cidadeTrabalhador'];
     $whatsapp = $_POST['whatsapp'];
     $email = $_POST['email'];
-    $senha = $_POST['senha'];
+    
 
     $nome = utf8_decode($nome);
     $apelido = utf8_decode($apelido);
@@ -26,14 +26,14 @@ if(!isset($_SESSION['id']) || $_SESSION['id'] == ''){
     $estado = utf8_decode($estado);
     $cidade = utf8_decode($cidade);
     $email = utf8_decode($email);
-    $senha = utf8_decode($senha);
+    
 
-    $senhaMD5 = md5($senha);
+    
 
 
-    $sql = "UPDATE trabalhador, usuario SET trabalhador.nomeCompleto = '".$nome."', trabalhador.atuacao = '".$atuacao."', trabalhador.apelido = '".$apelido."', trabalhador.dataNascimento = '".$dataNascimento."', trabalhador.cpf = '".$cpf."', trabalhador.cidade = '".$cidade."', trabalhador.estado = '".$estado."', trabalhador.whatsapp = '".$whatsapp."', usuario.email = '".$email."', usuario.senha = '".$senhaMD5."'  WHERE trabalhador.id AND usuario.idTrabalhador = $id";
+    $sql = "UPDATE trabalhador, usuario SET trabalhador.nomeCompleto = '".$nome."', trabalhador.atuacao = '".$atuacao."', trabalhador.apelido = '".$apelido."', trabalhador.dataNascimento = '".$dataNascimento."', trabalhador.cpf = '".$cpf."', trabalhador.cidade = '".$cidade."', trabalhador.estado = '".$estado."', trabalhador.whatsapp = '".$whatsapp."', usuario.email = '".$email."' WHERE trabalhador.id = $id AND usuario.idTrabalhador = $id";
 
-    if($nome != "" && $atuacao != "" && $dataNascimento != "" && $cpf != "" && $estado != "" && $cidade != "" && $whatsapp != "" && $email != "" && $senha != ""){
+    if($nome != "" && $atuacao != "" && $dataNascimento != "" && $cpf != "" && $estado != "" && $cidade != "" && $whatsapp != "" && $email != ""){
 
         if(mysqli_query($conecta, $sql)){
             $data = array("return" => true);

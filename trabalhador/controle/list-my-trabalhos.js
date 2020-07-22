@@ -1,4 +1,6 @@
+// Click na classe meusTrabalhosPage para abrir a página de mostrar as páginas
 $('.meusTrabalhosPage').click(function() {
+    // passando a url do ajax
     var url = '../modelo/list-my-trabalhos.php';
     $.ajax({
         dataType: 'JSON',
@@ -6,6 +8,7 @@ $('.meusTrabalhosPage').click(function() {
         url: url,
         assync: true,
         success: function(dados) {
+            // se der sucesso ele irá apagar a div #conteudoTrabalhador e irá mostrar todos os trabalhos em que ele foi responzabilizado
             $('#conteudoTrabalhador').empty();
             for (var i = 0; i < dados.length; i++) {
                 let meusTrabalhos = `
@@ -23,21 +26,18 @@ $('.meusTrabalhosPage').click(function() {
                     </a>
                 </div>
                 `;
-
-
                 $('#conteudoTrabalhador').append(meusTrabalhos);
             }
         },
+        // se ele não tiver trabalhos como responsável irá aparecer uma mensagem que não existe trabalhaos a serem mostrados.
         error: function(dados) {
             Swal.fire({
-                // title: 'Atenção',
+                title: 'Atenção',
                 text: 'Você não tem trabalhos para ser vizualizados',
-                imageUrl: '../../img/1-removebg-preview-removebg-preview.png',
-                imageWidth: 400,
-                imageHeight: 150,
-                imageAlt: 'Custom image',
+                type: 'info',
+                footer: '<img src="../../img/1-removebg-preview-removebg-preview.png" class="img-fluid" width="100px" alt="">',
                 confirmButtonText: 'OK'
-            })
+            });
         }
-    })
-})
+    });
+});
